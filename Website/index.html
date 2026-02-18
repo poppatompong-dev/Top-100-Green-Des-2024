@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uthai Thani: The Living Heritage | Green Destinations 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Loading Fonts via Google Fonts Import below */
+
+        @import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Sarabun:wght@300;400;600&display=swap');
+
+        :root {
+            --ut-green: #1b4332;
+            /* Emerald Sakae Krang */
+            --ut-gold: #b08968;
+            /* Heritage Gold */
+            --ut-beige: #f8f4f0;
+            /* Antique Paper */
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--ut-beige);
+            color: #2d2d2d;
+            scroll-behavior: smooth;
+        }
+
+        /* First Version's Beautiful English Font */
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Thai Identity Font */
+        .font-ci {
+            font-family: 'Charmonman', cursive;
+            font-weight: bold;
+            /* Make Thai text thicker */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            /* Added shadow for visibility */
+        }
+
+        .overlay-gradient {
+            background: linear-gradient(to bottom, rgba(27, 67, 50, 0.2) 0%, rgba(27, 67, 50, 0.8) 100%);
+        }
+
+        /* Smooth Auto-Slide */
+        .slide-fade {
+            display: none;
+            animation: cinematicFade 6s ease-in-out forwards;
+        }
+
+        @keyframes cinematicFade {
+            from {
+                opacity: 0;
+                transform: scale(1.15);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .ken-burns {
+            animation: kenBurns 20s infinite alternate;
+        }
+
+        @keyframes kenBurns {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        .text-shadow-enhanced {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Staggered Text Reveal */
+        .word-reveal {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .word-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chapter-line {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--ut-gold), transparent);
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--ut-beige);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--ut-green);
+            border-radius: 10px;
+        }
+
+        img {
+            object-fit: cover;
+            background-color: #e5e7eb;
+        }
+
+        .scrolled-nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 0.75rem 2rem !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Reading Progress Bar */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 100;
+            background: transparent;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--ut-gold);
+            width: 0%;
+            transition: width 0.1s;
+            box-shadow: 0 0 10px var(--ut-gold);
+        }
+
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--ut-gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s, width 0.3s, height 0.3s, background-color 0.3s;
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor.hovered {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(176, 137, 104, 0.2);
+            border-color: transparent;
+        }
+
+        /* Particle Canvas */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        /* 3D Tilt Effect */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transition: transform 0.1s;
+        }
+
+        .tilt-inner {
+            transform: translateZ(20px);
+        }
+
+        /* Horizontal Scroll Section */
+        .horizontal-scroll-wrapper {
+            width: 100vh;
+            height: 100vw;
+            transform: rotate(-90deg) translateX(-100vh);
+            transform-origin: top left;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .horizontal-scroll-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hs-content {
+            display: flex;
+            flex-direction: row;
+            width: 300vw;
+            /* Adjust based on content length */
+            height: 100vh;
+            transform: rotate(90deg) translateY(-100vh);
+            transform-origin: top left;
+        }
+
+        /* Clip Path Reveal */
+        .clip-reveal {
+            clip-path: circle(0% at 50% 50%);
+            transition: clip-path 1.5s ease-out;
+        }
+
+        .clip-reveal.visible {
+            clip-path: circle(150% at 50% 50%);
+        }
+
+        /* Lightbox Styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        #lightbox-img {
+            max-width: 90%;
+            max-height: 80vh;
+            object-fit: contain;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            border: 4px solid white;
+            border-radius: 4px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1) rotate(90deg);
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Video Section Glow */
+        .video-glow {
+            box-shadow: 0 0 100px rgba(16, 185, 129, 0.1);
+        }
+
+        /* Custom Hover for Photos */
+        .photo-hoover {
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .photo-hoover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Accessibility & High Contrast */
+        .high-contrast {
+            background-color: black !important;
+            color: yellow !important;
+        }
+
+        .high-contrast * {
+            background-color: black !important;
+            color: yellow !important;
+            border-color: yellow !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
+
+        /* Accessibility Bar */
+        #accessibility-bar {
+            background: rgba(27, 67, 50, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="antialiased cursor-none transition-all duration-300" id="main-body"> <!-- Hide default cursor -->
+    <!-- Custom Cursor Element -->
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- 0. ACCESSIBILITY BAR (WCAG) -->
+    <div id="accessibility-bar"
+        class="fixed top-0 w-full z-[10000] px-4 py-1 flex justify-between items-center text-[10px] uppercase font-bold tracking-widest text-white/80 transition-transform duration-300 transform -translate-y-full hover:translate-y-0">
+        <div class="flex space-x-4">
+            <span class="opacity-50">Universal Design:</span>
+            <button onclick="changeFontSize(1)" class="hover:text-ut-gold transition">A+</button>
+            <button onclick="changeFontSize(0)" class="hover:text-ut-gold transition">A</button>
+            <button onclick="changeFontSize(-1)" class="hover:text-ut-gold transition">A-</button>
+            <div class="w-[1px] h-3 bg-white/20 self-center"></div>
+            <button onclick="toggleContrast()" class="hover:text-ut-gold transition flex items-center space-x-1">
+                <span class="w-3 h-3 rounded-full bg-yellow-400"></span> <span>High Contrast</span>
+            </button>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="text-ut-gold">EN</a>
+            <span class="opacity-30">/</span>
+            <a href="#" class="hover:text-ut-gold transition">TH</a>
+            <span class="bg-ut-green px-2 rounded text-white text-[9px] self-center">Official</span>
+        </div>
+    </div>
+    <!-- Hint to show bar -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-ut-gold/50 z-[9999] rounded-b-lg cursor-pointer hover:bg-ut-gold transition"
+        onmouseover="document.getElementById('accessibility-bar').classList.remove('-translate-y-full')"></div>
+
+    <!-- Scroll Progress -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-12 py-8 flex justify-between items-center transition-all duration-700"
+        id="main-nav">
+        <div class="flex flex-col">
+            <span class="text-white font-serif text-3xl font-bold tracking-tighter transition-colors duration-500"
+                id="nav-logo">Uthai Thani</span>
+            <span class="text-white/60 text-[9px] tracking-[0.4em] uppercase font-bold transition-colors duration-500"
+                id="nav-sub">Old Town Heritage</span>
+        </div>
+        <div class="hidden lg:flex space-x-12 text-white/80 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors duration-500"
+            id="nav-links">
+            <a href="#intro" class="hover:text-ut-gold transition">Introduction</a>
+            <a href="#honor" class="hover:text-ut-gold transition">The Honor</a>
+            <a href="#heritage" class="hover:text-ut-gold transition">The Soul</a>
+            <a href="#river" class="hover:text-ut-gold transition">The River</a>
+            <a href="#sustainable" class="hover:text-ut-gold transition">The Action</a>
+        </div>
+        <div class="border border-white/30 text-white text-[9px] px-4 py-2 rounded-full font-bold tracking-[0.1em] backdrop-blur-sm"
+            id="nav-badge">GREEN DESTINATIONS 2024</div>
+    </nav>
+
+    <!-- 1. HERO CINEMATIC SECTION -->
+    <section id="intro" class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
+        <video id="heroVideo" autoplay muted loop playsinline class="absolute w-full h-full object-cover opacity-60">
+            <source src="../Contents/uthai-sustainable-dev-top100.mp4" type="video/mp4">
+        </video>
+        <canvas id="particle-canvas"></canvas> <!-- Particles Layer -->
+        <div class="absolute inset-0 overlay-gradient"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <div <div
+                class="ken-burns inline-block mb-4 text-xs md:text-sm tracking-[0.5em] uppercase font-light border-b border-ut-gold/50 pb-2">
+                Join the Movement <span class="opacity-50">|</span> <span class="font-ci">เข้าร่วมวิถีแห่งความช้า</span>
+            </div>
+            <h1
+                class="ken-burns text-6xl md:text-9xl font-serif font-bold mb-6 tracking-tight leading-none drop-shadow-2xl">
+                The Slow Life<br><span class="text-ut-gold italic">Revolution</span>
+            </h1>
+
+            <!-- Problem-Solution Hook -->
+            <p class="ken-burns text-lg md:text-2xl font-light tracking-wide max-w-2xl mx-auto mb-12 text-stone-200">
+                <span class="block text-ut-gold text-sm uppercase tracking-[0.2em] mb-4 font-bold">Burnout is not a
+                    badge of honor.</span>
+                Reclaim your time. Escape the modern chaos. Find your rhythm in the embrace of the Sakae Krang
+                River.<br>
+                <span class="font-ci text-lg text-white/80 mt-2 block">"ความเหนื่อยล้า ไม่ใช่รางวัลของชีวิต...
+                    ให้สายน้ำสะแกกรังช่วยเยียวยาคุณ"</span>
+            </p>
+
+            <div class="ken-burns flex justify-center space-x-6">
+                <a href="#micro-moments"
+                    class="bg-ut-green text-white px-10 py-4 rounded-full font-bold hover:bg-ut-green/90 transition transform hover:-translate-y-1 shadow-lg hover:shadow-ut-green/50 border border-white/20 backdrop-blur-sm group">
+                    <span>Begin Your Journey</span>
+                    <span
+                        class="block text-[10px] font-ci font-normal text-white/80 group-hover:text-white">เริ่มต้นการเดินทาง</span>
+                </a>
+                <button onclick="scrollToSection('video-journey')"
+                    class="group relative inline-flex items-center space-x-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 px-8 py-4 rounded-full transition-all duration-500">
+                    <span
+                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition duration-500">
+                        <svg class="w-4 h-4 text-ut-green fill-current" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em]">Watch Documentary</span>
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center">
+            <span class="text-[9px] uppercase tracking-[0.3em] text-white/40 mb-2">Scroll to explore</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-white/40 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- 1.5 MICRO-MOMENTS (The 5-Second Feeling) -->
+    <section id="micro-moments" class="py-20 bg-[#1a1a1a] text-white relative border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Moment 1 -->
+                <div
+                    class="group relative overflow-hidden rounded-xl bg-stone-800 aspect-[16/9] cursor-pointer hover:shadow-2xl hover:shadow-ut-gold/20 transition-all duration-500">
+                    <img src="../Contents/D8.jpg"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700 decoration-slate-400"
+                        alt="Morning Alms">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-ut-gold font-mono text-xs tracking-widest">06:12 AM</span>
+                        <h3
+                            class="font-serif text-2xl italic mt-1 text-white group-hover:text-ut-gold transition text-balance">
+                            The River Wakes Up</h3>
+                        <p class="font-ci text-lg text-stone-200">ตักบาตรทางน้ำ</p>
+                        <p
+                            class="text-stone-300 text-xs mt-2 opacity-0 group-hover:opacity-100 transition duration-500 transform translate-y-2 group-hover:translate-y-0 leading-relaxed text-pretty">
+                            The smell of hot soy milk. The orange robes of monks reflecting on the water. Silence.<br>
+                            <span class="font-ci text-stone-400">กลิ่นหอมของน้ำเต้าหู้ร้อนๆ
+                                และจีวรสีส้มที่สะท้อนผิวน้ำ... คือความสงบที่แท้จริง</span>
+                        </p>
+                        <button onclick="shareMoment('The River Wakes Up')"
+                            class="mt-4 text-[10px] uppercase tracking-widest text-ut-gold hover:text-white transition opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-700 delay-100 flex items-center space-x-2">
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                            <span>Share Moment</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Moment 2 -->
+                <div
+                    class="group relative overflow-hidden rounded-xl bg-stone-800 aspect-[16/9] cursor-pointer hover:shadow-2xl hover:shadow-ut-green/20 transition-all duration-500">
+                    <img src="../Contents/D6.jpg"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700"
+                        alt="Afternoon Bike">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-ut-green font-mono text-xs tracking-widest">14:30 PM</span>
+                        <h3
+                            class="font-serif text-2xl italic mt-1 text-white group-hover:text-ut-green transition text-balance">
+                            The Bamboo Breeze</h3>
+                        <p class="font-ci text-lg text-stone-200">ปั่นจักรยานลอดอุโมงค์ไม้ไผ่</p>
+                        <p
+                            class="text-stone-300 text-xs mt-2 opacity-0 group-hover:opacity-100 transition duration-500 transform translate-y-2 group-hover:translate-y-0 leading-relaxed text-pretty">
+                            Cycling through the Hup Pa Tat forest. The air cools down instantly. Ancient ferns
+                            whisper.<br>
+                            <span class="font-ci text-stone-400">ปั่นจักรยานผ่านป่าดึกดำบรรพ์
+                                สัมผัสอากาศเย็นยะเยือกและเสียงกระซิบของเฟิร์นโบราณ</span>
+                        </p>
+                        <button onclick="shareMoment('The Bamboo Breeze')"
+                            class="mt-4 text-[10px] uppercase tracking-widest text-ut-green hover:text-white transition opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-700 delay-100 flex items-center space-x-2">
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                            <span>Share Moment</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Moment 3 -->
+                <div
+                    class="group relative overflow-hidden rounded-xl bg-stone-800 aspect-[16/9] cursor-pointer hover:shadow-2xl hover:shadow-ut-gold/20 transition-all duration-500">
+                    <img src="../Contents/market-old-town.jpg"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700"
+                        alt="Evening Market">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-ut-gold font-mono text-xs tracking-widest">19:45 PM</span>
+                        <h3
+                            class="font-serif text-2xl italic mt-1 text-white group-hover:text-ut-gold transition text-balance">
+                            The Old Market</h3>
+                        <p class="font-ci text-lg text-stone-200">ถนนคนเดินตรอกโรงยา</p>
+                        <p
+                            class="text-stone-300 text-xs mt-2 opacity-0 group-hover:opacity-100 transition duration-500 transform translate-y-2 group-hover:translate-y-0 leading-relaxed text-pretty">
+                            Grandma prepares "Khanom Krok". Laughter echoes in the wooden alley. Time stands still.<br>
+                            <span class="font-ci text-stone-400">คุณยายกำลังแคะขนมครก เสียงหัวเราะก้องในตรอกไม้เก่า...
+                                เวลาดูเหมือนจะหยุดเดิน</span>
+                        </p>
+                        <button onclick="shareMoment('The Old Market')"
+                            class="mt-4 text-[10px] uppercase tracking-widest text-ut-gold hover:text-white transition opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-700 delay-100 flex items-center space-x-2">
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                            <span>Share Moment</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. GLOBAL HONOR -->
+    <section id="honor" class="py-40 px-8 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-24 items-center">
+            <div class="order-2 lg:order-1 space-y-12">
+                <div class="space-y-4">
+                    <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">Chapter 01</span>
+                    <h2 class="font-serif text-6xl text-ut-green italic">Global Recognition</h2>
+                    <p class="font-ci text-3xl text-ut-gold">เกียรติยศแห่งเมืองเก่า</p>
+                </div>
+                <div class="w-20 h-[1px] bg-ut-gold"></div>
+                <p class="text-gray-600 leading-relaxed text-xl font-light serif-body italic">
+                    "Uthai Thani Old Town stands as a beacon of sustainable tourism, balancing the preservation of
+                    ancient traditions with a forward-thinking green mindset."
+                </p>
+                <div class="flex items-center space-x-8 pt-6">
+                    <img src="../Contents/2024.jpg" class="h-28 object-contain" alt="Green Destinations Logo">
+                    <div class="h-16 w-[1px] bg-stone-200"></div>
+                    <img src="../Contents/S__31825923_0.jpg"
+                        class="h-24 object-contain shadow-xl rounded-sm border-4 border-white" alt="Certificate">
+                </div>
+            </div>
+            <!-- Auto Slider 1: Global Honor -->
+            <div class="order-1 lg:order-2 relative rounded-[4rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] aspect-[4/5] bg-stone-200 tilt-card"
+                data-carousel="honor">
+                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/D1.jpg')"><img
+                        src="../Contents/D1.jpg" class="w-full h-full object-cover ken-burns" alt="Uthai City View">
+                </div>
+                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/D10.jpg')"><img
+                        src="../Contents/D10.jpg" class="w-full h-full object-cover ken-burns" alt="Drone Perspective">
+                </div>
+                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/D5.jpg')"><img
+                        src="../Contents/D5.jpg" class="w-full h-full object-cover ken-burns" alt="Aerial River"></div>
+                <!-- 2024 Award Image -->
+                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/2024.jpg')"><img
+                        src="../Contents/2024.jpg" class="w-full h-full object-cover ken-burns" alt="2024 Award"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CULTURAL SOUL -->
+    <section id="heritage" class="py-32 bg-stone-100 px-8 clip-reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-28">
+                <p class="text-ut-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-6">Chapter 02</p>
+                <h2 class="font-serif text-7xl text-ut-green italic">The Soul of Faith</h2>
+                <p class="font-ci text-4xl text-ut-gold mt-4">รากแก้วแห่งศรัทธา</p>
+                <div class="chapter-line"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-16">
+                <!-- Large Image Slider: Faith -->
+                <div class="lg:col-span-7 relative rounded-[5rem] overflow-hidden shadow-2xl h-[500px] lg:h-[750px] border-[16px] border-white tilt-card"
+                    data-carousel="heritage">
+                    <!-- Tak Bat Devo - Signature Event -->
+                    <div class="slide-fade h-full cursor-zoom-in"
+                        onclick="openLightbox('../Contents/tak-bat-devo.jpg')">
+                        <img src="../Contents/tak-bat-devo.jpg" class="w-full h-full object-cover ken-burns"
+                            alt="Tak Bat Devo">
+                        <div class="absolute bottom-12 left-12 text-white text-shadow-enhanced tilt-inner">
+                            <h3 class="font-serif italic text-4xl">Tak Bat Devo</h3>
+                            <p class="font-ci text-xl">ประเพณีตักบาตรเทโว</p>
+                        </div>
+                    </div>
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/626013.jpg')"><img
+                            src="../Contents/626013.jpg" class="w-full h-full object-cover ken-burns"
+                            alt="Temple Tradition"></div>
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/22035642.jpg')">
+                        <img src="../Contents/22035642.jpg" class="w-full h-full object-cover ken-burns"
+                            alt="Wat Uposatharam">
+                    </div>
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/625991.jpg')"><img
+                            src="../Contents/625991.jpg" class="w-full h-full object-cover ken-burns"
+                            alt="Mural Painting"></div>
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/626011.jpg')"><img
+                            src="../Contents/626011.jpg" class="w-full h-full object-cover ken-burns"
+                            alt="Riverside Faith"></div>
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/625992.jpg')"><img
+                            src="../Contents/625992.jpg" class="w-full h-full object-cover ken-burns"
+                            alt="Sacred Moments"></div>
+                </div>
+
+                <div class="lg:col-span-5 flex flex-col justify-center space-y-12">
+                    <div class="space-y-6">
+                        <h3 class="font-serif text-5xl text-ut-green italic">Sacred Atmosphere</h3>
+                        <p class="text-gray-500 font-light text-xl leading-relaxed italic">
+                            The sound of morning prayers blends with the gentle flow of the Sakae Krang, creating an
+                            atmosphere where time stands still.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="rounded-3xl overflow-hidden shadow-lg aspect-square cursor-zoom-in"
+                            onclick="openLightbox('../Contents/625988.jpg')">
+                            <img src="../Contents/625988.jpg" class="w-full h-full object-cover" alt="Detail 1">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden shadow-lg aspect-square cursor-zoom-in"
+                            onclick="openLightbox('../Contents/625989.jpg')">
+                            <img src="../Contents/625989.jpg" class="w-full h-full object-cover" alt="Detail 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. RIVER LIFE GALLERY -->
+    <section id="river" class="py-40 px-8 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
+                <div class="space-y-4">
+                    <p class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">Chapter 03</p>
+                    <h2 class="font-serif text-7xl text-ut-green italic">The River of Life</h2>
+                    <p class="font-ci text-4xl text-ut-gold">สายน้ำแห่งชีวิต</p>
+                </div>
+                <div class="h-[1px] flex-grow bg-stone-100 mx-12 hidden lg:block"></div>
+                <p class="text-stone-300 font-light tracking-[0.5em] uppercase text-[10px]">Sakae Krang Pulse</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 h-auto lg:h-[800px]">
+                <div class="lg:col-span-2 lg:row-span-2 rounded-[4rem] overflow-hidden shadow-xl group relative cursor-pointer"
+                    onclick="openLightbox('../Contents/raft-community.jpg')">
+                    <img src="../Contents/raft-community.jpg"
+                        class="w-full h-full object-cover transition duration-[2s] group-hover:scale-110"
+                        alt="Raft Community">
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-700"></div>
+                    <div class="absolute bottom-12 left-12 text-white">
+                        <p class="font-serif italic text-4xl drop-shadow-lg">Raft House Sanctuary</p>
+                    </div>
+                </div>
+                <div class="rounded-[2.5rem] overflow-hidden shadow-lg group cursor-zoom-in"
+                    onclick="openLightbox('../Contents/625996.jpg')">
+                    <img src="../Contents/625996.jpg"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Boat Way">
+                </div>
+                <div class="rounded-[2.5rem] overflow-hidden shadow-lg group cursor-zoom-in"
+                    onclick="openLightbox('../Contents/morning-market-river.jpg')">
+                    <img src="../Contents/morning-market-river.jpg"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                        alt="Market Flow">
+                </div>
+                <div class="rounded-[2.5rem] overflow-hidden shadow-lg group cursor-zoom-in"
+                    onclick="openLightbox('../Contents/D7.jpg')">
+                    <img src="../Contents/D7.jpg"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                        alt="Bridge Landscape">
+                </div>
+                <div class="rounded-[2.5rem] overflow-hidden shadow-lg group cursor-zoom-in"
+                    onclick="openLightbox('../Contents/625997.jpg')">
+                    <img src="../Contents/625997.jpg"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                        alt="River Bank">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.1 COMMUNITY VIBE (NEW) -->
+    <section id="community" class="py-24 bg-stone-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative rounded-[3rem] overflow-hidden shadow-xl aspect-[4/3] group cursor-pointer tilt-card"
+                    onclick="openLightbox('../Contents/trok-rong-ya-walking-street.jpg')">
+                    <img src="../Contents/trok-rong-ya-walking-street.jpg"
+                        class="w-full h-full object-cover transition duration-[2s] group-hover:scale-110"
+                        alt="Walking Street">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 text-white tilt-inner">
+                        <h3 class="font-serif italic text-3xl mb-1">Trok Rong Ya</h3>
+                        <p class="font-ci text-lg text-ut-gold">ถนนคนเดินตรอกโรงยา</p>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <h2 class="font-serif text-5xl text-ut-green italic leading-tight">Vibrant <br>Community Life</h2>
+                    <p class="font-ci text-3xl text-ut-gold">วิถีชีวิตชุมชนที่งดงาม</p>
+                    <p class="text-gray-600 font-light text-lg leading-relaxed">
+                        From the historic Trok Rong Ya to the friendly smiles of the locals, Uthai Thani is a place
+                        where community spirit thrives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SUSTAINABLE FUTURE -->
+    <section id="sustainable" class="py-40 bg-emerald-950 text-white px-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-28 items-center relative z-10">
+            <div class="space-y-16">
+                <div class="space-y-6">
+                    <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">Chapter 04: The
+                        Mission</span>
+                    <h2 class="font-serif text-7xl italic leading-tight">Preserving for<br>the Future</h2>
+                    <p class="font-ci text-4xl text-ut-gold">ร่วมมือ เพื่อความยั่งยืน</p>
+                </div>
+                <p class="text-emerald-100/70 font-light text-xl leading-relaxed">
+                    Protecting our river means protecting our soul. Through community-led waste management and
+                    ecological awareness, we ensure the Sakae Krang flows clean for generations to come.
+                </p>
+
+                <div class="space-y-8">
+                    <div
+                        class="flex items-center space-x-10 bg-white/5 p-10 rounded-[3.5rem] border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-500">
+                        <div class="text-ut-gold font-serif italic text-6xl">01</div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1 tracking-tight">Eco-Innovation</h4>
+                            <p class="text-emerald-100/40 font-light text-sm italic">Smart waste solutions for a
+                                pristine heritage town.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Auto Slide Sustainable -->
+            <div class="relative rounded-[5rem] overflow-hidden shadow-2xl aspect-square lg:h-[650px] border-[16px] border-emerald-900/40"
+                data-carousel="sustainable">
+                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/1.jpg')"><img
+                        src="../Contents/1.jpg" class="w-full h-full object-cover ken-burns" alt="Waste Solution"></div>
+                <div class="slide-fade h-full cursor-zoom-in"
+                    onclick="openLightbox('../Contents/629844593_122249944874130725_4926295052052421751_n.jpg')"><img
+                        src="../Contents/629844593_122249944874130725_4926295052052421751_n.jpg"
+                        class="w-full h-full object-cover ken-burns" alt="Action Smile"></div>
+                <div class="slide-fade h-full cursor-zoom-in"
+                    onclick="openLightbox('../Contents/629951761_122249944898130725_2190588064083708674_n.jpg')"><img
+                        src="../Contents/629951761_122249944898130725_2190588064083708674_n.jpg"
+                        class="w-full h-full object-cover ken-burns" alt="Participation"></div>
+                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('../Contents/D2.jpg')"><img
+                        src="../Contents/D2.jpg" class="w-full h-full object-cover ken-burns" alt="Irrigation"></div>
+            </div>
+        </div>
+        <!-- Background Decor -->
+        <div
+            class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]">
+        </div>
+    </section>
+
+    <!-- 6. CINEMATIC JOURNEY (NEW) -->
+    <section id="video-journey" class="py-40 bg-stone-900 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div class="space-y-12">
+                    <div class="space-y-4">
+                        <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">The Film</span>
+                        <h2 class="font-serif text-6xl text-white italic">A Sustainable Journey</h2>
+                        <p class="font-ci text-3xl text-ut-gold">เส้นทางสู่ความยั่งยืน</p>
+                    </div>
+                    <p class="text-white/60 text-xl font-light leading-relaxed">
+                        Experience the visual story of Uthai Thani Old Town through our officially submitted
+                        documentary. Witness the harmony of people, nature, and heritage.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-card p-8 rounded-3xl border border-white/10">
+                            <h4 class="text-ut-gold font-serif text-3xl mb-2 italic">100</h4>
+                            <p class="text-white/40 text-[10px] uppercase tracking-widest font-bold">Global Rankings</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-3xl border border-white/10">
+                            <h4 class="text-ut-gold font-serif text-3xl mb-2 italic">2024</h4>
+                            <p class="text-white/40 text-[10px] uppercase tracking-widest font-bold">Award Year</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl video-glow border border-white/10">
+                    <video controls
+                        poster="../Contents/green_destinations_top_100_stories_2024_SPACEBAR_Photo_V01_442d2b0437.webp"
+                        class="w-full h-full object-cover">
+                        <source src="../Contents/uthai-sustainable-dev-top100.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Background Element -->
+        <div class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-ut-green/20 blur-[150px] rounded-full"></div>
+
+        <!-- Cinema Mode Control -->
+        <div class="absolute bottom-10 right-10 z-20">
+            <button onclick="toggleCinemaMode()"
+                class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-6 py-3 rounded-full flex items-center space-x-2 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+                <span class="text-xs font-bold uppercase tracking-widest">Cinema Mode</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- 7. LIGHTBOX MODAL -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Full size preview">
+    </div>
+
+    <!-- 8. BRAND IDENTITY: THE DNA (COMPLETE) -->
+    <section id="brand-identity" class="py-32 bg-[#fdfbf7] relative overflow-hidden">
+        <!-- Texture Overlay -->
+        <div class="absolute inset-0 opacity-40 pointer-events-none"
+            style="background-image: url('https://www.transparenttextures.com/patterns/sketch-pad.png');"></div>
+
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-24">
+                <span class="text-stone-400 font-bold tracking-[0.4em] uppercase text-xs">The Living Design
+                    System</span>
+                <h2 class="font-serif text-6xl text-ut-green italic mt-4">The DNA of Uthai Thani</h2>
+                <p class="font-ci text-3xl text-ut-gold mt-2">อัตลักษณ์เมืองพระชนกจักรี</p>
+                <div class="w-24 h-[1px] bg-ut-gold mx-auto mt-8"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                <!-- Left: Golden Ratio Construction -->
+                <div
+                    class="lg:col-span-7 relative p-12 border border-stone-300 rounded-[2rem] bg-white/40 backdrop-blur-sm">
+                    <div
+                        class="absolute -top-3 -left-3 bg-ut-gold text-white px-4 py-1 text-[10px] tracking-widest font-bold uppercase">
+                        Fig. 01: Construction</div>
+
+                    <!-- The Grid Container -->
+                    <div
+                        class="aspect-[4/3] relative border border-stone-200 flex items-center justify-center overflow-hidden">
+                        <!-- Grid Lines -->
+                        <div class="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-20">
+                            <div class="border-r border-stone-400 h-full"></div>
+                            <div class="border-r border-stone-400 h-full"></div>
+                            <div class="border-r border-stone-400 h-full"></div>
+                            <div class="border-r border-stone-400 h-full"></div>
+                            <div class="border-r border-stone-400 h-full"></div>
+                            <div class="border-r border-stone-400 h-full"></div>
+                        </div>
+
+                        <!-- Golden Circular Geometry -->
+                        <div
+                            class="absolute w-96 h-96 border border-ut-green/50 rounded-full flex items-center justify-center">
+                            <div class="absolute w-full h-[1px] bg-stone-300"></div>
+                            <div class="absolute h-full w-[1px] bg-stone-300"></div>
+                            <div
+                                class="w-64 h-64 border border-ut-gold/50 rounded-full flex items-center justify-center">
+                                <div class="w-40 h-40 border border-ut-green/30 rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- The Symbol Intersect -->
+                        <div class="relative z-10 w-32 h-32 border-2 border-ut-green rotate-45 mix-blend-multiply">
+                        </div>
+                        <div
+                            class="relative z-10 w-32 h-32 border-2 border-ut-gold -ml-16 mix-blend-multiply rounded-full">
+                        </div>
+
+                        <!-- Annotations -->
+                        <div class="absolute top-8 right-8 text-right">
+                            <span class="font-ci text-stone-500 text-sm">River Dynamics (1.618)</span>
+                            <div class="w-16 h-[1px] bg-stone-400 ml-auto mt-1"></div>
+                        </div>
+                        <div class="absolute bottom-8 left-8">
+                            <div class="w-16 h-[1px] bg-stone-400 mb-1"></div>
+                            <span class="font-ci text-stone-500 text-sm">Spiritual Anchor</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div class="h-1 bg-ut-green mb-2 opacity-50"></div>
+                            <p class="text-[9px] uppercase tracking-widest text-stone-400">Nature</p>
+                        </div>
+                        <div>
+                            <div class="h-1 bg-ut-gold mb-2 opacity-50"></div>
+                            <p class="text-[9px] uppercase tracking-widest text-stone-400">Faith</p>
+                        </div>
+                        <div>
+                            <div class="h-1 bg-stone-300 mb-2 opacity-50"></div>
+                            <p class="text-[9px] uppercase tracking-widest text-stone-400">History</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Manifesto & Texture -->
+                <div class="lg:col-span-5 space-y-12">
+                    <!-- Brand Manifesto -->
+                    <div class="space-y-6">
+                        <h3 class="font-serif text-3xl text-ut-green italic">The Soul of the Brand</h3>
+                        <p class="font-ci text-xl text-stone-600 leading-relaxed">
+                            "ความเรียบง่าย ที่ซ่อนรายละเอียดอันลึกซึ้ง"
+                        </p>
+                        <p class="text-stone-500 font-light leading-relaxed italic border-l-2 border-ut-gold pl-6">
+                            Our design philosophy mirrors the city itself: humble on the surface, but rich with history,
+                            craft, and spiritual depth upon closer inspection. We use <span
+                                class="text-ut-green font-bold">Earth Tones</span> to ground us, and <span
+                                class="text-ut-gold font-bold">Gold</span> to elevate our spirit.
+                        </p>
+                    </div>
+
+                    <!-- Visual Texture Strip -->
+                    <div class="space-y-4">
+                        <h4 class="text-[10px] uppercase tracking-widest text-stone-400 font-bold">Pattern System</h4>
+                        <div class="grid grid-cols-3 gap-4 h-24">
+                            <!-- River Wave Pattern -->
+                            <div
+                                class="bg-ut-green/10 rounded-lg flex items-center justify-center overflow-hidden border border-ut-green/20">
+                                <svg class="w-12 h-12 text-ut-green/40 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2 2 2 4 2v2c-2 0-2-2-4-2s-2 2-4 2-2-2-4 2-2 2-4 2-2-2-4-2s-2 2-4 2v-2z" />
+                                </svg>
+                            </div>
+                            <!-- Faith Lotus Pattern -->
+                            <div
+                                class="bg-ut-gold/10 rounded-lg flex items-center justify-center overflow-hidden border border-ut-gold/20">
+                                <svg class="w-12 h-12 text-ut-gold/40 fill-current" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 22h20L12 2zm0 4l6.5 13h-13L12 6z" />
+                                </svg>
+                            </div>
+                            <!-- Fabric Pattern -->
+                            <div
+                                class="bg-stone-200 rounded-lg flex items-center justify-center overflow-hidden border border-stone-300">
+                                <div class="w-full h-full opacity-30"
+                                    style="background-image: radial-gradient(#4a4a4a 1px, transparent 1px); background-size: 8px 8px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. VISION & MISSION (OFFICIAL) -->
+    <section id="green-impact" class="py-24 bg-ut-green text-white relative overflow-hidden">
+        <!-- Data Storytelling Section -->
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">The Evidence</span>
+                <h2 class="font-serif text-5xl italic mt-4">Nature's Scorecard</h2>
+                <p class="font-ci text-xl text-stone-300 mt-2">ตัวชี้วัดความยั่งยืน</p>
+            </div>
+
+            <!-- Data Contrast Comparison -->
+            <div
+                class="grid md:grid-cols-2 gap-16 items-center mt-12 bg-white/5 border-t border-white/10 pt-12 rounded-2xl p-8 shadow-inner">
+                <!-- Left: The Problem (City) -->
+                <div class="text-right opacity-80">
+                    <h4 class="text-xs uppercase tracking-widest font-bold mb-6">Big City Reality <span
+                            class="block font-ci text-sm font-normal normal-case opacity-70">ความจริงของเมืองใหญ่</span>
+                    </h4>
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-end space-x-4">
+                            <span class="text-2xl font-bold">150+</span>
+                            <span class="text-xs uppercase w-24 text-right">AQI (Hazardous)</span>
+                            <div class="w-32 h-2 bg-red-400 rounded-full box-shadow-[0_0_10px_rgba(248,113,113,0.5)]">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end space-x-4">
+                            <span class="text-2xl font-bold">85dB</span>
+                            <span class="text-xs uppercase w-24 text-right">Noise Level</span>
+                            <div class="w-40 h-2 bg-red-400 rounded-full box-shadow-[0_0_10px_rgba(248,113,113,0.5)]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: The Solution (Uthai) -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest font-bold mb-6 text-ut-gold">Uthai Thani Escape <span
+                            class="block font-ci text-sm font-normal normal-case text-white/70">ทางออกที่อุทัยธานี</span>
+                    </h4>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-2 bg-ut-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.8)]"></div>
+                            <span class="text-xs uppercase w-24">AQI (Pure)</span>
+                            <span class="text-4xl font-bold text-ut-gold">15</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-2 bg-ut-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.8)]"></div>
+                            <span class="text-xs uppercase w-24">Noise Level</span>
+                            <span class="text-4xl font-bold text-ut-gold">30dB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-stone-400 text-xs mt-16 italic tracking-wider">Source: Green Destinations
+                Assessment Report 2024</p>
+        </div>
+    </section>
+
+    <!-- 10. VISION & MISSION (OFFICIAL) -->
+    <section id="vision-mission" class="py-32 bg-stone-100">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-20">
+                <img src="../Contents/2024.jpg" class="h-20 mx-auto mb-8 grayscale opacity-50" alt="Emblem">
+                <h2 class="font-serif text-5xl text-ut-green italic">Strategic Vision</h2>
+                <p class="font-ci text-3xl text-ut-gold mt-2">วิสัยทัศน์การพัฒนาเมือง</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Vision Card -->
+                <div
+                    class="bg-white p-12 rounded-[2.5rem] shadow-sm border border-stone-200 text-center space-y-6 hover:shadow-xl transition duration-500">
+                    <div
+                        class="w-20 h-20 bg-ut-green/10 rounded-full flex items-center justify-center mx-auto text-ut-green">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl text-stone-700">Vision (วิสัยทัศน์)</h3>
+                    <p class="text-stone-500 font-light leading-relaxed">
+                        "Uthai Thani: A livable riverside city, rich in heritage, driven by smart green growth and
+                        sustainable tourism."
+                    </p>
+                    <p class="text-stone-400 font-ci text-lg">
+                        "เมืองน่าอยู่ อู่อารยธรรม ชุ่มฉ่ำแม่น้ำสะแกกรัง พลังสีเขียว"
+                    </p>
+                </div>
+
+                <!-- Mission Card -->
+                <div
+                    class="bg-white p-12 rounded-[2.5rem] shadow-sm border border-stone-200 text-center space-y-6 hover:shadow-xl transition duration-500">
+                    <div
+                        class="w-20 h-20 bg-ut-gold/10 rounded-full flex items-center justify-center mx-auto text-ut-gold">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl text-stone-700">Mission (พันธกิจ)</h3>
+                    <ul
+                        class="text-stone-500 font-light leading-relaxed space-y-2 text-sm text-left list-disc list-inside">
+                        <li>Fostering a strong, participatory community.</li>
+                        <li>Preserving local wisdom, arts, and culture.</li>
+                        <li>Developing eco-friendly infrastructure.</li>
+                        <li>Promoting smart governance and e-services.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. CITY NEWS (UPDATES) -->
+    <section id="city-news" class="py-24 bg-white border-t border-stone-100">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="font-serif text-4xl text-ut-green italic">City Updates</h2>
+                    <p class="font-ci text-xl text-ut-gold">ข่าวประชาสัมพันธ์</p>
+                </div>
+                <a href="#"
+                    class="text-xs uppercase tracking-widest font-bold text-stone-400 hover:text-ut-green transition border-b border-stone-200 pb-1">View
+                    All News</a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- News Item 1 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-stone-100">
+                        <img src="../Contents/625988.jpg"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="News 1">
+                    </div>
+                    <span class="text-[9px] uppercase tracking-widest text-ut-gold font-bold">Press Release • Feb 10,
+                        2026</span>
+                    <h4 class="font-serif text-xl text-stone-700 mt-2 group-hover:text-ut-green transition">Top 100
+                        Green Destinations Award Ceremony</h4>
+                </div>
+                <!-- News Item 2 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-stone-100">
+                        <img src="../Contents/trok-rong-ya-walking-street.jpg"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="News 2">
+                    </div>
+                    <span class="text-[9px] uppercase tracking-widest text-ut-green font-bold">Activity • Feb 14,
+                        2026</span>
+                    <h4 class="font-serif text-xl text-stone-700 mt-2 group-hover:text-ut-green transition">Trok Rong Ya
+                        Walking Street Valentine's Special</h4>
+                </div>
+                <!-- News Item 3 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-stone-100">
+                        <img src="../Contents/1.jpg"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="News 3">
+                    </div>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-400 font-bold">Announcement • Jan 20,
+                        2026</span>
+                    <h4 class="font-serif text-xl text-stone-700 mt-2 group-hover:text-ut-green transition">Zero Waste
+                        Community Workshop Registration</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-40 text-center bg-stone-50 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-4 gap-12 text-left mb-16">
+            <div class="lg:col-span-1 space-y-6">
+                <h4 class="font-serif text-2xl text-ut-green italic">Uthai Thani<br>Municipality</h4>
+                <p class="text-stone-500 text-sm leading-relaxed">
+                    14 Sri Uthai Road, Uthai Mai Subdistrict,<br>Mueang Color District,<br>Uthai Thani 61000
+                </p>
+                <div class="text-stone-400 text-xs space-y-1">
+                    <p>Tel: +66 56 511 060</p>
+                    <p>Email: saraban@uthaicity.go.th</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="font-bold text-xs uppercase tracking-widest text-stone-400">E-Service</h4>
+                <ul class="space-y-3 text-sm text-stone-600">
+                    <li><a href="#" class="hover:text-ut-green transition">Complaint System (Rong Took)</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Tax Payment Online</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Building Permit Request</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Queue Booking</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="font-bold text-xs uppercase tracking-widest text-stone-400">Information</h4>
+                <ul class="space-y-3 text-sm text-stone-600">
+                    <li><a href="#" class="hover:text-ut-green transition">Annual Budget Report</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Procurement News</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Executive Team</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Organization Chart</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="font-bold text-xs uppercase tracking-widest text-stone-400">Tourism</h4>
+                <ul class="space-y-3 text-sm text-stone-600">
+                    <li><a href="#" class="hover:text-ut-green transition">Tourist Map Download</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Accommodations</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Local Products (OTOP)</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Events Calendar</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-16 px-8 border-t border-stone-200 pt-16">
+            <div class="flex flex-col items-center space-y-8">
+                <img src="../Contents/2024.jpg" class="h-24 object-contain grayscale opacity-60" alt="Footer Logo">
+                <h2 class="font-serif italic text-6xl text-ut-green">The Soul of Uthai Thani</h2>
+                <p class="text-stone-400 text-[11px] tracking-[0.6em] uppercase font-bold">A Green Destinations Top 100
+                    Story | 2024</p>
+            </div>
+            <p class="text-stone-300 text-[9px] tracking-[0.4em] uppercase italic font-bold">Designed for International
+                Sustainable Tourism Promotion • &copy; 2024 Uthai Thani Municipality</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox Control
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop scrolling
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Resume scrolling
+        }
+
+        // Smooth Scroll Helper
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Automatic Carousel Logic
+        function startCarousel(carouselId) {
+            let slideIndex = 0;
+            const container = document.querySelector(`[data-carousel="${carouselId}"]`);
+            if (!container) return;
+
+            const slides = container.getElementsByClassName("slide-fade");
+
+            function showSlides() {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+
+                slides[slideIndex - 1].style.display = "block";
+                // Reset Animation
+                slides[slideIndex - 1].style.animation = 'none';
+                slides[slideIndex - 1].offsetHeight; /* trigger reflow */
+                slides[slideIndex - 1].style.animation = 'cinematicFade 6s ease-in-out forwards'; // Slower fade
+
+                setTimeout(showSlides, 6000); // 6 seconds per slide
+            }
+            showSlides();
+        }
+
+        // Initialize All & Force Play Video
+        window.onload = function () {
+            startCarousel("honor");
+            startCarousel("heritage");
+            startCarousel("sustainable");
+
+            const video = document.getElementById('heroVideo');
+            if (video) {
+                // Ensure video plays
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Autoplay was prevented. Waiting for interaction.");
+                    });
+                }
+            }
+        };
+
+        // Advanced Navbar Animation
+        window.onscroll = function () {
+            const nav = document.getElementById('main-nav');
+            const logo = document.getElementById('nav-logo');
+            const sub = document.getElementById('nav-sub');
+            const links = document.getElementById('nav-links');
+            const badge = document.getElementById('nav-badge');
+
+            if (window.pageYOffset > 100) {
+                nav.classList.add('scrolled-nav');
+                logo.classList.replace('text-white', 'text-ut-green');
+                sub.classList.replace('text-white/60', 'text-stone-400');
+                links.classList.replace('text-white/80', 'text-stone-500');
+                badge.classList.replace('text-white', 'text-ut-green');
+                badge.classList.replace('border-white/30', 'border-ut-green/20');
+            } else {
+                nav.classList.remove('scrolled-nav');
+                logo.classList.replace('text-ut-green', 'text-white');
+                sub.classList.replace('text-stone-400', 'text-white/60');
+                links.classList.replace('text-stone-500', 'text-white/80');
+                badge.classList.replace('text-ut-green', 'text-white');
+                badge.classList.replace('border-ut-green/20', 'border-white/30');
+            }
+        };
+
+        // Close Lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeLightbox();
+        });
+
+        /* --- WOW FACTORS SCRIPT --- */
+
+        // 1. Scroll Progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        });
+
+        // 2. Custom Cursor
+        const cursor = document.getElementById('customCursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Hover Effect for Cursor
+        const hoverElements = document.querySelectorAll('a, button, .cursor-pointer, .group');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+
+        // 3. Floating Particles (Canvas)
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particlesArray = [];
+        const numberOfParticles = 50;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.01; // Twinkle effect
+                if (this.size <= 0.2) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 3 + 1;
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(176, 137, 104, ${this.opacity})`; // ut-gold color
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // 4. Parallax Effect (Simple)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.ken-burns');
+            parallaxElements.forEach(el => {
+                const speed = 0.5;
+                el.style.transform = `translateY(${scrolled * speed * 0.05}px) scale(1.1)`;
+            });
+        });
+
+        // 5. Staggered Text Reveal
+        const textElements = document.querySelectorAll('h1, h2, h3');
+        textElements.forEach(el => {
+            const text = el.innerText;
+            el.innerHTML = text.split(' ').map(word => `<span class="word-reveal">${word}</span> `).join('');
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const words = entry.target.querySelectorAll('.word-reveal');
+                    words.forEach((word, index) => {
+                        setTimeout(() => {
+                            word.classList.add('visible');
+                        }, index * 100); // 100ms delay per word
+                    });
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        textElements.forEach(el => revealObserver.observe(el));
+
+        // 6. 3D Tilt Effect
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -10; // Max rotation deg
+                const rotateY = ((x - centerX) / centerX) * 10;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+
+        // 7. Clip Path Reveal on Scroll
+        const clipObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        // Smooth Appearance Controller
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-20');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(el => {
+            el.classList.add('transition-all', 'duration-[1.5s]', 'ease-out', 'opacity-0', 'translate-y-20');
+            observer.observe(el);
+        });
+        // 8. Accessibility Functions
+        let fontSize = 100;
+        function changeFontSize(dir) {
+            if (dir === 1) fontSize += 10;
+            if (dir === -1) fontSize -= 10;
+            if (dir === 0) fontSize = 100;
+
+            // Limit range
+            if (fontSize < 80) fontSize = 80;
+            if (fontSize > 150) fontSize = 150;
+
+            document.documentElement.style.fontSize = fontSize + "%";
+        }
+
+        function toggleContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+        // 9. Data Story Counter Animation
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        const updateCount = () => {
+                            const target = +counter.getAttribute('data-target');
+                            const count = +counter.innerText;
+                            const increment = target / 100;
+
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + increment);
+                                setTimeout(updateCount, 20);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCount();
+                    });
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const counterSection = document.querySelector('#counter-container');
+        if (counterSection) counterObserver.observe(counterSection);
+
+        // 10. Social Share Function
+        function shareMoment(momentName) {
+            const text = encodeURIComponent(`I found my moment of peace at Uthai Thani: "${momentName}". Join the Slow Life Revolution. #UthaiThani #GreenDestination`);
+            window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
+        }
+
+        // 11. Cinema Mode
+        let isCinemaMode = false;
+        function toggleCinemaMode() {
+            const videoSection = document.getElementById('video-journey');
+
+            if (!isCinemaMode) {
+                videoSection.style.position = 'fixed';
+                videoSection.style.top = '0';
+                videoSection.style.left = '0';
+                videoSection.style.width = '100vw';
+                videoSection.style.height = '100vh';
+                videoSection.style.zIndex = '9999';
+                document.body.style.overflow = 'hidden';
+            } else {
+                videoSection.style.position = 'relative';
+                videoSection.style.top = 'auto';
+                videoSection.style.left = 'auto';
+                videoSection.style.width = 'auto';
+                videoSection.style.height = 'auto';
+                videoSection.style.zIndex = 'auto';
+                document.body.style.overflow = 'auto';
+            }
+            isCinemaMode = !isCinemaMode;
+        }
+
+    </script>
+</body>
+
+</html>
