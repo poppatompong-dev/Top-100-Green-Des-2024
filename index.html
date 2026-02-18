@@ -338,12 +338,21 @@
 
         /* Custom Hover for Photos */
         .photo-hoover {
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden;
+        }
+
+        .photo-hoover img {
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .photo-hoover:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-hoover:hover img {
+            transform: scale(1.1);
         }
 
         /* Accessibility & High Contrast */
@@ -1855,6 +1864,15 @@
                         goToSlide(nextIndex);
                     }, 8000);
                 }
+
+                // --- Pause on Hover ---
+                carousel.addEventListener('mouseenter', () => {
+                    clearInterval(autoPlayInterval);
+                });
+
+                carousel.addEventListener('mouseleave', () => {
+                    startInterval();
+                });
 
                 // Show first slide immediately
                 slides[0].style.display = 'block';
