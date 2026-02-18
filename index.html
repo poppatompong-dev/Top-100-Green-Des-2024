@@ -376,7 +376,7 @@
     <!-- 1. HERO CINEMATIC SECTION -->
     <section id="intro" class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
         <video id="heroVideo" autoplay muted loop playsinline class="absolute w-full h-full object-cover opacity-60">
-            <source src="Contents/uthai-sustainable-dev-top100.mp4" type="video/mp4">
+            <source src="Contents/UthaiThaniOldTown-Top100.mp4" type="video/mp4">
         </video>
         <canvas id="particle-canvas"></canvas> <!-- Particles Layer -->
         <div class="absolute inset-0 overlay-gradient"></div>
@@ -575,9 +575,8 @@
                 <div class="lg:col-span-7 relative rounded-[5rem] overflow-hidden shadow-2xl h-[500px] lg:h-[750px] border-[16px] border-white tilt-card"
                     data-carousel="heritage">
                     <!-- Tak Bat Devo - Signature Event -->
-                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/tak-bat-devo.jpg')">
-                        <img src="Contents/tak-bat-devo.jpg" class="w-full h-full object-cover ken-burns"
-                            alt="Tak Bat Devo">
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/626013.jpg')">
+                        <img src="Contents/626013.jpg" class="w-full h-full object-cover ken-burns" alt="Tak Bat Devo">
                         <div class="absolute bottom-12 left-12 text-white text-shadow-enhanced tilt-inner">
                             <h3 class="font-serif italic text-4xl">Tak Bat Devo</h3>
                             <p class="font-ci text-xl">ประเพณีตักบาตรเทโว</p>
@@ -639,8 +638,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 h-auto lg:h-[800px]">
                 <div class="lg:col-span-2 lg:row-span-2 rounded-[4rem] overflow-hidden shadow-xl group relative cursor-pointer"
-                    onclick="openLightbox('Contents/raft-community.jpg')">
-                    <img src="Contents/raft-community.jpg"
+                    onclick="openLightbox('Contents/D1.jpg')">
+                    <img src="Contents/D1.jpg"
                         class="w-full h-full object-cover transition duration-[2s] group-hover:scale-110"
                         alt="Raft Community">
                     <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-700"></div>
@@ -654,8 +653,8 @@
                         class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Boat Way">
                 </div>
                 <div class="rounded-[2.5rem] overflow-hidden shadow-lg group cursor-zoom-in"
-                    onclick="openLightbox('Contents/morning-market-river.jpg')">
-                    <img src="Contents/morning-market-river.jpg"
+                    onclick="openLightbox('Contents/market-old-town.jpg')">
+                    <img src="Contents/market-old-town.jpg"
                         class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                         alt="Market Flow">
                 </div>
@@ -680,8 +679,8 @@
         <div class="max-w-7xl mx-auto px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="relative rounded-[3rem] overflow-hidden shadow-xl aspect-[4/3] group cursor-pointer tilt-card"
-                    onclick="openLightbox('Contents/trok-rong-ya-walking-street.jpg')">
-                    <img src="Contents/trok-rong-ya-walking-street.jpg"
+                    onclick="openLightbox('Contents/market-old-town.jpg')">
+                    <img src="Contents/market-old-town.jpg"
                         class="w-full h-full object-cover transition duration-[2s] group-hover:scale-110"
                         alt="Walking Street">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -803,7 +802,7 @@
                     <video controls
                         poster="Contents/green_destinations_top_100_stories_2024_SPACEBAR_Photo_V01_442d2b0437.webp"
                         class="w-full h-full object-cover">
-                        <source src="Contents/uthai-sustainable-dev-top100.mp4" type="video/mp4">
+                        <source src="Contents/UthaiThaniOldTown-Top100.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -1496,8 +1495,9 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('section').forEach(el => {
-            el.classList.add('transition-all', 'duration-[1.5s]', 'ease-out', 'opacity-0', 'translate-y-20');
-            observer.observe(el);
+            el.classList.add('transition-all', 'duration-[1.5s]', 'ease-out');
+            // Removed opacity-0 and translate-y-20 to ensure visibility by default for PDF/No-JS
+            // observer.observe(el); // Disable scroll reveal hiding
         });
         // 8. Accessibility Functions
         let fontSize = 100;
