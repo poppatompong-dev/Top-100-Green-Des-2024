@@ -65,6 +65,16 @@
             }
         }
 
+        .text-shadow-strong {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .glass-card-dark {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         .ken-burns {
             animation: kenBurns 20s infinite alternate;
         }
@@ -390,7 +400,8 @@
                 <p class="text-ut-gold tracking-[0.3em] text-sm uppercase mb-4 animate-[fadeIn_2s_ease-out]">
                     Join the Movement | <span class="font-ci text-lg">เข้าร่วมวิถีแห่งความยั่งยืน</span>
                 </p>
-                <h1 class="font-serif text-6xl md:text-9xl leading-none mb-6 animate-[fadeInUp_2s_ease-out_0.5s]">
+                <h1
+                    class="font-serif text-6xl md:text-9xl leading-none mb-6 animate-[fadeInUp_2s_ease-out_0.5s] text-shadow-strong">
                     Timeless <br> <span class="italic text-ut-green">Living</span>
                 </h1>
                 <p class="font-ci text-4xl text-ut-gold mt-4 mb-8 animate-[fadeInUp_2s_ease-out_1s]">
@@ -575,8 +586,8 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-28">
                 <p class="text-ut-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-6">Chapter 02</p>
-                <h2 class="font-serif text-7xl text-ut-green italic">The Soul of Faith</h2>
-                <p class="font-ci text-4xl text-ut-gold mt-4">รากแก้วแห่งศรัทธา</p>
+                <h2 class="font-serif text-7xl text-ut-green italic text-shadow-strong">The Soul of Faith</h2>
+                <p class="font-ci text-4xl text-ut-gold mt-4 text-shadow-strong">รากแก้วแห่งศรัทธา</p>
                 <div class="chapter-line"></div>
             </div>
 
@@ -788,8 +799,8 @@
                 <div class="space-y-12">
                     <div class="space-y-4">
                         <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">The Film</span>
-                        <h2 class="font-serif text-6xl text-white italic">A Sustainable Journey</h2>
-                        <p class="font-ci text-3xl text-ut-gold">เส้นทางสู่ความยั่งยืน</p>
+                        <h2 class="font-serif text-6xl text-white italic text-shadow-strong">A Sustainable Journey</h2>
+                        <p class="font-ci text-3xl text-ut-gold text-shadow-strong">เส้นทางสู่ความยั่งยืน</p>
                     </div>
                     <p class="text-white/60 text-xl font-light leading-relaxed">
                         Experience the visual story of Uthai Thani Old Town through our officially submitted
@@ -809,8 +820,8 @@
 
                 <div
                     class="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl video-glow border border-white/10">
-                    <iframe class="w-full h-full object-cover"
-                        src="https://www.youtube.com/embed/gSuTThGnSuU?rel=0&modestbranding=1"
+                    <iframe id="doc-player" class="w-full h-full object-cover"
+                        src="https://www.youtube.com/embed/gSuTThGnSuU?enablejsapi=1&rel=0&modestbranding=1"
                         title="Uthai Thani Old Town Documentary" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
@@ -1619,6 +1630,37 @@
 
         // Initialize carousels on load
         document.addEventListener('DOMContentLoaded', initCarousels);
+
+        // 13. YouTube Smart Player API for Documentary Section
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('doc-player', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // Smart Playback: Play when scrolled into view, Pause when out
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        try { player.playVideo(); } catch (e) { }
+                    } else {
+                        try { player.pauseVideo(); } catch (e) { }
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when 50% visible
+
+            const iframe = document.getElementById('doc-player');
+            if (iframe) observer.observe(iframe);
+        }
 
 
     </script>
