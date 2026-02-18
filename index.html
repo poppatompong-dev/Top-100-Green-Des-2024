@@ -75,6 +75,12 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
         .ken-burns {
             animation: kenBurns 20s infinite alternate;
         }
@@ -753,52 +759,70 @@
 
                 <div class="space-y-8">
                     <div
-                        class="flex items-center space-x-10 bg-white/5 p-10 rounded-[3.5rem] border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-500">
+                        class="flex items-center space-x-10 bg-stone-900 p-10 rounded-[3.5rem] border border-stone-800 hover:shadow-2xl transition-all duration-500 group">
                         <div class="text-ut-gold font-serif italic text-6xl">01</div>
                         <div>
-                            <h4 class="font-bold text-xl mb-1 tracking-tight">Eco-Innovation</h4>
-                            <p class="text-emerald-100/40 font-light text-sm italic">Smart waste solutions for a
-                                pristine heritage town.</p>
+                            <h4
+                                class="font-bold text-xl mb-1 tracking-tight text-white group-hover:text-ut-gold transition-colors">
+                                The Evidence</h4>
+                            <p class="text-emerald-100/60 font-light text-sm italic">Smart waste solutions for a
+                                pristine heritage town.<br><span
+                                    class="font-ci text-lg text-emerald-100/80 not-italic">การจัดการขยะอัจฉริยะเพื่อเมืองเก่าที่บริสุทธิ์</span>
+                            </p>
                         </div>
                     </div>
 
                     <div
-                        class="flex items-center space-x-10 bg-white/5 p-10 rounded-[3.5rem] border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-500">
+                        class="flex items-center space-x-10 bg-stone-900 p-10 rounded-[3.5rem] border border-stone-800 hover:shadow-2xl transition-all duration-500 group">
                         <div class="text-ut-gold font-serif italic text-6xl">02</div>
                         <div>
-                            <h4 class="font-bold text-xl mb-1 tracking-tight">Community Action</h4>
-                            <p class="text-emerald-100/40 font-light text-sm italic">Locals leading the charge in
-                                sustainable living.</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="flex items-center space-x-10 bg-white/5 p-10 rounded-[3.5rem] border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-500">
-                        <div class="text-ut-gold font-serif italic text-6xl">03</div>
-                        <div>
-                            <h4 class="font-bold text-xl mb-1 tracking-tight">Water Wisdom</h4>
-                            <p class="text-emerald-100/40 font-light text-sm italic">Preserving the Sakae Krang River
-                                ecosystem.</p>
+                            <h4
+                                class="font-bold text-xl mb-1 tracking-tight text-white group-hover:text-ut-gold transition-colors">
+                                Nature's Scorecard</h4>
+                            <p class="text-emerald-100/60 font-light text-sm italic">Preserving the Sakae Krang River
+                                ecosystem.<br><span
+                                    class="font-ci text-lg text-emerald-100/80 not-italic">อนุรักษ์ระบบนิเวศแม่น้ำสะแกกรัง</span>
+                            </p>
                         </div>
                     </div>
                 </div>
+                <div
+                    class="flex items-center space-x-10 bg-white/5 p-10 rounded-[3.5rem] border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-500">
+                    <div class="text-ut-gold font-serif italic text-6xl">02</div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-1 tracking-tight">Community Action</h4>
+                        <p class="text-emerald-100/40 font-light text-sm italic">Locals leading the charge in
+                            sustainable living.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex items-center space-x-10 bg-white/5 p-10 rounded-[3.5rem] border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-500">
+                    <div class="text-ut-gold font-serif italic text-6xl">03</div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-1 tracking-tight">Water Wisdom</h4>
+                        <p class="text-emerald-100/40 font-light text-sm italic">Preserving the Sakae Krang River
+                            ecosystem.</p>
+                    </div>
+                </div>
             </div>
-            <!-- Auto Slide Sustainable -->
-            <div class="relative rounded-[5rem] overflow-hidden shadow-2xl aspect-square lg:h-[650px] border-[16px] border-emerald-900/40"
-                data-carousel="sustainable">
-                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/1.jpg')"><img
-                        src="Contents/1.jpg" class="w-full h-full object-cover ken-burns" alt="Waste Solution"></div>
-                <div class="slide-fade h-full cursor-zoom-in"
-                    onclick="openLightbox('Contents/629844593_122249944874130725_4926295052052421751_n.jpg')"><img
-                        src="Contents/629844593_122249944874130725_4926295052052421751_n.jpg"
-                        class="w-full h-full object-cover ken-burns" alt="Action Smile"></div>
-                <div class="slide-fade h-full cursor-zoom-in"
-                    onclick="openLightbox('Contents/629951761_122249944898130725_2190588064083708674_n.jpg')"><img
-                        src="Contents/629951761_122249944898130725_2190588064083708674_n.jpg"
-                        class="w-full h-full object-cover ken-burns" alt="Participation"></div>
-                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D2.jpg')"><img
-                        src="Contents/D2.jpg" class="w-full h-full object-cover ken-burns" alt="Irrigation"></div>
-            </div>
+        </div>
+        <!-- Auto Slide Sustainable -->
+        <div class="relative rounded-[5rem] overflow-hidden shadow-2xl aspect-square lg:h-[650px] border-[16px] border-emerald-900/40"
+            data-carousel="sustainable">
+            <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/1.jpg')"><img
+                    src="Contents/1.jpg" class="w-full h-full object-cover ken-burns" alt="Waste Solution"></div>
+            <div class="slide-fade h-full cursor-zoom-in"
+                onclick="openLightbox('Contents/629844593_122249944874130725_4926295052052421751_n.jpg')"><img
+                    src="Contents/629844593_122249944874130725_4926295052052421751_n.jpg"
+                    class="w-full h-full object-cover ken-burns" alt="Action Smile"></div>
+            <div class="slide-fade h-full cursor-zoom-in"
+                onclick="openLightbox('Contents/629951761_122249944898130725_2190588064083708674_n.jpg')"><img
+                    src="Contents/629951761_122249944898130725_2190588064083708674_n.jpg"
+                    class="w-full h-full object-cover ken-burns" alt="Participation"></div>
+            <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D2.jpg')"><img
+                    src="Contents/D2.jpg" class="w-full h-full object-cover ken-burns" alt="Irrigation"></div>
+        </div>
         </div>
         <!-- Background Decor -->
         <div
@@ -822,15 +846,20 @@
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div
-                            class="glass-card-dark p-8 rounded-3xl border border-white/20 hover:bg-black/60 transition duration-300">
+                            class="glass-card-light p-8 rounded-3xl border border-white/40 hover:bg-white/30 transition duration-300">
                             <h4 class="text-ut-gold font-serif text-4xl mb-2 italic text-shadow-strong">100</h4>
-                            <p class="text-white text-xs uppercase tracking-widest font-bold opacity-90">Global Rankings
+                            <p
+                                class="text-white font-bold text-xs uppercase tracking-widest opacity-100 text-shadow-md">
+                                Global Rankings<br><span class="font-ci text-lg font-normal opacity-90">อันดับโลก</span>
                             </p>
                         </div>
                         <div
-                            class="glass-card-dark p-8 rounded-3xl border border-white/20 hover:bg-black/60 transition duration-300">
+                            class="glass-card-light p-8 rounded-3xl border border-white/40 hover:bg-white/30 transition duration-300">
                             <h4 class="text-ut-gold font-serif text-4xl mb-2 italic text-shadow-strong">2024</h4>
-                            <p class="text-white text-xs uppercase tracking-widest font-bold opacity-90">Award Year</p>
+                            <p
+                                class="text-white font-bold text-xs uppercase tracking-widest opacity-100 text-shadow-md">
+                                Award Year<br><span
+                                    class="font-ci text-lg font-normal opacity-90">ปีที่ได้รับรางวัล</span></p>
                         </div>
                     </div>
                 </div>
@@ -858,7 +887,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                 </svg>
-                <span class="text-xs font-bold uppercase tracking-widest">Cinema Mode</span>
+                <span class="text-xs font-bold uppercase tracking-widest">Cinema Mode | <span
+                        class="font-ci text-base font-normal">โหมดโรงภาพยนตร์</span></span>
             </button>
         </div>
     </section>
@@ -1281,8 +1311,9 @@
 
             <!-- Contact / Address -->
             <div class="mt-12 text-center space-y-4">
-                <h4 class="text-ut-gold font-serif italic text-xl">Visit Us</h4>
-                <p class="text-stone-400 font-light text-sm leading-relaxed text-shadow-strong">
+                <h4 class="text-ut-gold font-serif italic text-xl">Visit Us <span
+                        class="font-ci text-lg not-italic text-ut-gold/80 ml-2">เยี่ยมชมเรา</span></h4>
+                <p class="text-stone-400 font-light text-sm leading-relaxed">
                     147 Sri Uthai Road,<br>
                     Uthai Thani District,<br>
                     Uthai Thani 61000
