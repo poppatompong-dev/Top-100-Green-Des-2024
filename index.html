@@ -232,7 +232,6 @@
             top: 0;
             left: 0;
             scrollbar-width: none;
-            /* Firefox */
         }
 
         .horizontal-scroll-wrapper::-webkit-scrollbar {
@@ -241,182 +240,171 @@
 
         .hs-content {
             display: flex;
+        }
 
-            /* Modern SPA Sidebar - Ultra Slim */
-            #spa-nav {
-                position: fixed;
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1000;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                padding: 16px 8px;
-                border-radius: 40px;
-                background: rgba(27, 67, 50, 0.15);
-                backdrop-filter: blur(8px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                transition: all 0.5s ease;
-            }
+        /* Modern SPA Sidebar - Ultra Slim */
+        #spa-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 16px 8px;
+            border-radius: 40px;
+            background: rgba(27, 67, 50, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+        }
 
-            #spa-nav:hover {
-                background: rgba(27, 67, 50, 0.4);
-                padding: 16px 12px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            }
+        #spa-nav:hover {
+            background: rgba(27, 67, 50, 0.4);
+            padding: 16px 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
 
-            .spa-nav-item {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 32px;
-                height: 32px;
-                text-decoration: none;
-                color: rgba(255, 255, 255, 0.4);
-                font-family: 'Playfair Display', serif;
-                font-size: 10px;
-                font-weight: 700;
-                position: relative;
-                transition: all 0.3s ease;
-                border-radius: 50%;
-            }
+        .spa-nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: 'Playfair Display', serif;
+            font-size: 10px;
+            font-weight: 700;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
 
-            .spa-nav-item::before {
-                content: '';
-                position: absolute;
-                width: 4px;
-                height: 4px;
-                background: currentColor;
-                border-radius: 50%;
-                transition: all 0.3s ease;
-            }
+        .spa-nav-item::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: currentColor;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
 
-            .spa-nav-item span {
-                opacity: 0;
-                transform: translateX(10px);
-                transition: all 0.3s ease;
-                pointer-events: none;
-            }
+        .spa-nav-item span {
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
 
-            /* Modern SPA Sidebar - Ultra Slim */
-            #spa-nav {
-                position: fixed;
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1000;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                padding: 16px 8px;
-                border-radius: 40px;
-                background: rgba(27, 67, 50, 0.15);
-                backdrop-filter: blur(8px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                transition: all 0.5s ease;
-            }
+        #spa-nav:hover .spa-nav-item span {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
-            #spa-nav:hover {
-                background: rgba(27, 67, 50, 0.4);
-                padding: 16px 12px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            }
+        #spa-nav:hover .spa-nav-item::before {
+            opacity: 0;
+        }
 
-            .spa-nav-item {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 32px;
-                height: 32px;
-                text-decoration: none;
-                color: rgba(255, 255, 255, 0.4);
-                font-family: 'Playfair Display', serif;
-                font-size: 10px;
-                font-weight: 700;
-                position: relative;
-                transition: all 0.3s ease;
-                border-radius: 50%;
-            }
+        .spa-nav-item.active {
+            color: #b08968;
+            transform: scale(1.2);
+        }
 
-            .spa-nav-item::before {
-                content: '';
-                position: absolute;
-                width: 4px;
-                height: 4px;
-                background: currentColor;
-                border-radius: 50%;
-                transition: all 0.3s ease;
-            }
+        .spa-nav-item.active::before {
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 10px #b08968;
+        }
 
-            .spa-nav-item span {
-                opacity: 0;
-                transform: translateX(10px);
-                transition: all 0.3s ease;
-                pointer-events: none;
-            }
+        .spa-nav-item:hover {
+            color: white;
+            transform: scale(1.1);
+        }
 
-            #spa-nav:hover .spa-nav-item span {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        /* Lightbox CSS */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            cursor: zoom-out;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
-            #spa-nav:hover .spa-nav-item::before {
-                opacity: 0;
-            }
+        #lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
 
-            .spa-nav-item.active {
-                color: #b08968;
-                /* ut-gold */
-                transform: scale(1.2);
-            }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
 
-            .spa-nav-item.active::before {
-                width: 8px;
-                height: 8px;
-                box-shadow: 0 0 10px #b08968;
-            }
+        #lightbox.active img {
+            transform: scale(1);
+        }
 
-            .spa-nav-item:hover {
-                color: white;
-                transform: scale(1.1);
-            }
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 10001;
+            transition: transform 0.3s ease;
+        }
 
-            .lightbox-close svg {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+        }
 
-            /* Glassmorphism Card */
-            .glass-card {
-                background: rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
+        .lightbox-close svg {
+            width: 2rem;
+            height: 2rem;
+        }
 
-            /* Video Section Glow */
-            .video-glow {
-                box-shadow: 0 0 100px rgba(16, 185, 129, 0.1);
-            }
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-            /* Custom Hover for Photos */
-            .photo-hover {
-                transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-                overflow: hidden;
-            }
+        /* Video Section Glow */
+        .video-glow {
+            box-shadow: 0 0 100px rgba(16, 185, 129, 0.1);
+        }
 
-            .photo-hover img {
-                transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-            }
+        /* Custom Hover for Photos */
+        .photo-hover {
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden;
+        }
 
-            .photo-hover:hover {
-                transform: translateY(-15px);
-                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-            }
+        .photo-hover img {
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
 
-            .photo-hover:hover img {
-                transform: scale(1.1);
-            }
+        .photo-hover:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-hover:hover img {
+            transform: scale(1.1);
         }
 
         /* Accessibility & High Contrast */
@@ -585,7 +573,7 @@
         <div class="max-w-7xl mx-auto px-8">
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Moment 1 -->
-                <div
+                <div onclick="openLightbox('Contents/D8.jpg')"
                     class="group relative overflow-hidden rounded-xl bg-stone-800 aspect-[16/9] cursor-pointer hover:shadow-2xl hover:shadow-ut-gold/20 transition-all duration-500">
                     <img src="Contents/D8.jpg"
                         class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700 decoration-slate-400"
@@ -603,7 +591,7 @@
                             <span class="font-ci text-stone-400">กลิ่นหอมของน้ำเต้าหู้ร้อนๆ
                                 และจีวรสีส้มที่สะท้อนผิวน้ำ... คือความสงบที่แท้จริง</span>
                         </p>
-                        <button onclick="shareMoment('The River Wakes Up')"
+                        <button onclick="event.stopPropagation(); shareMoment('The River Wakes Up')"
                             class="mt-4 text-[10px] uppercase tracking-widest text-ut-gold hover:text-white transition opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-700 delay-100 flex items-center space-x-2">
                             <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
                                 <path
@@ -614,7 +602,7 @@
                     </div>
                 </div>
                 <!-- Moment 2 -->
-                <div
+                <div onclick="openLightbox('Contents/D6.jpg')"
                     class="group relative overflow-hidden rounded-xl bg-stone-800 aspect-[16/9] cursor-pointer hover:shadow-2xl hover:shadow-ut-green/20 transition-all duration-500">
                     <img src="Contents/D6.jpg"
                         class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700"
@@ -633,7 +621,7 @@
                             <span class="font-ci text-stone-400">ปั่นจักรยานผ่านป่าดึกดำบรรพ์
                                 สัมผัสอากาศเย็นยะเยือกและเสียงกระซิบของเฟิร์นโบราณ</span>
                         </p>
-                        <button onclick="shareMoment('The Bamboo Breeze')"
+                        <button onclick="event.stopPropagation(); shareMoment('The Bamboo Breeze')"
                             class="mt-4 text-[10px] uppercase tracking-widest text-ut-green hover:text-white transition opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-700 delay-100 flex items-center space-x-2">
                             <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
                                 <path
@@ -644,7 +632,7 @@
                     </div>
                 </div>
                 <!-- Moment 3 -->
-                <div
+                <div onclick="openLightbox('Contents/market-old-town.jpg')"
                     class="group relative overflow-hidden rounded-xl bg-stone-800 aspect-[16/9] cursor-pointer hover:shadow-2xl hover:shadow-ut-gold/20 transition-all duration-500">
                     <img src="Contents/market-old-town.jpg"
                         class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700"
@@ -662,7 +650,7 @@
                             <span class="font-ci text-stone-400">คุณยายกำลังแคะขนมครก เสียงหัวเราะก้องในตรอกไม้เก่า...
                                 เวลาดูเหมือนจะหยุดเดิน</span>
                         </p>
-                        <button onclick="shareMoment('The Old Market')"
+                        <button onclick="event.stopPropagation(); shareMoment('The Old Market')"
                             class="mt-4 text-[10px] uppercase tracking-widest text-ut-gold hover:text-white transition opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-700 delay-100 flex items-center space-x-2">
                             <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
                                 <path
@@ -694,10 +682,12 @@
                         ที่ผสานรักษาวิถีชีวิตดั้งเดิมเข้ากับแนวคิดสีเขียวเพื่ออนาคต"</span>
                 </p>
                 <div class="flex items-center space-x-8 pt-6">
-                    <img src="Contents/2024.jpg" class="h-28 object-contain" alt="Green Destinations Logo">
+                    <img src="Contents/2024.jpg" class="h-28 object-contain cursor-zoom-in"
+                        alt="Green Destinations Logo" onclick="openLightbox('Contents/2024.jpg')">
                     <div class="h-16 w-[1px] bg-stone-200"></div>
                     <img src="Contents/S__31825923_0.jpg"
-                        class="h-24 object-contain shadow-xl rounded-sm border-4 border-white" alt="Certificate">
+                        class="h-24 object-contain shadow-xl rounded-sm border-4 border-white cursor-zoom-in"
+                        alt="Certificate" onclick="openLightbox('Contents/S__31825923_0.jpg')">
                 </div>
             </div>
             <!-- Auto Slider 1: Global Honor -->
@@ -1371,7 +1361,9 @@
     <section id="vision-mission" class="py-32 bg-stone-100">
         <div class="max-w-6xl mx-auto px-8">
             <div class="text-center mb-20">
-                <img src="Contents/2024.jpg" class="h-20 mx-auto mb-8 grayscale opacity-50" alt="Emblem">
+                <img src="Contents/2024.jpg"
+                    class="h-20 mx-auto mb-8 grayscale opacity-50 cursor-zoom-in hover:opacity-100 transition"
+                    alt="Emblem" onclick="openLightbox('Contents/2024.jpg')">
                 <h2 class="font-serif text-5xl text-ut-green italic">Strategic Vision</h2>
                 <p class="font-ci text-3xl text-ut-gold mt-2">วิสัยทัศน์การพัฒนาเมือง</p>
             </div>
@@ -1435,7 +1427,7 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- News Item 1 -->
-                <div class="group cursor-pointer">
+                <div class="group cursor-pointer" onclick="openLightbox('Contents/2024.jpg')">
                     <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-stone-100 shadow-md">
                         <img src="Contents/2024.jpg"
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
@@ -1449,7 +1441,7 @@
                         พิธีมอบรางวัลเมืองยั่งยืนระดับโลก</p>
                 </div>
                 <!-- News Item 2 -->
-                <div class="group cursor-pointer">
+                <div class="group cursor-pointer" onclick="openLightbox('Contents/market-old-town.jpg')">
                     <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-stone-100">
                         <img src="Contents/market-old-town.jpg"
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
@@ -1463,7 +1455,7 @@
                         กิจกรรมพิเศษวันวาเลนไทน์ ณ ตรอกโรงยา</p>
                 </div>
                 <!-- News Item 3 -->
-                <div class="group cursor-pointer">
+                <div class="group cursor-pointer" onclick="openLightbox('Contents/1.jpg')">
                     <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-stone-100">
                         <img src="Contents/1.jpg"
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
