@@ -79,6 +79,20 @@
             animation: kenBurns 20s infinite alternate;
         }
 
+        /* PRODUCTION LEVEL IMAGE FILTERS */
+        img.object-cover,
+        .slide-fade img {
+            filter: saturate(1.2) contrast(1.1) brightness(1.05);
+            /* Tourism Vibe: Vibrant & Pop */
+            transition: filter 0.5s ease;
+        }
+
+        img.object-cover:hover,
+        .slide-fade img:hover {
+            filter: saturate(1.3) contrast(1.15) brightness(1.1);
+            /* Slight boost on hover */
+        }
+
         @keyframes kenBurns {
             from {
                 transform: scale(1);
