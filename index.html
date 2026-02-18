@@ -375,9 +375,13 @@
 
     <!-- 1. HERO CINEMATIC SECTION -->
     <section id="intro" class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
-        <video id="heroVideo" autoplay muted loop playsinline class="absolute w-full h-full object-cover opacity-60">
-            <source src="Contents/เมืองเก่าอุทัยธานี.mp4" type="video/mp4">
-        </video>
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <iframe
+                src="https://www.youtube.com/embed/gSuTThGnSuU?autoplay=1&mute=1&controls=0&loop=1&playlist=gSuTThGnSuU&showinfo=0&rel=0&iv_load_policy=3&disablekb=1"
+                class="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 opacity-60 pointer-events-none"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+        </div>
         <canvas id="particle-canvas"></canvas> <!-- Particles Layer -->
         <div class="absolute inset-0 overlay-gradient"></div>
         <div class="relative z-10 text-center text-white px-4">
@@ -805,11 +809,12 @@
 
                 <div
                     class="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl video-glow border border-white/10">
-                    <video controls
-                        poster="Contents/green_destinations_top_100_stories_2024_SPACEBAR_Photo_V01_442d2b0437.webp"
-                        class="w-full h-full object-cover">
-                        <source src="Contents/เมืองเก่าอุทัยธานี.mp4" type="video/mp4">
-                    </video>
+                    <iframe class="w-full h-full object-cover"
+                        src="https://www.youtube.com/embed/gSuTThGnSuU?rel=0&modestbranding=1"
+                        title="Uthai Thani Old Town Documentary" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -1307,12 +1312,8 @@
             const video = document.getElementById('heroVideo');
             if (video) {
                 // Ensure video plays
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log("Autoplay was prevented. Waiting for interaction.");
-                    });
-                }
+                // video.play(); 
+                // YouTube handles autoplay via iframe params
             }
         };
 
