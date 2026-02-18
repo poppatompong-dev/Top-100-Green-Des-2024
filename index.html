@@ -382,6 +382,45 @@
         <div id="progress-bar"></div>
     </div>
 
+    <!-- Chapter Sidebar Navigation (SPA Style) -->
+    <div class="fixed right-6 top-1/2 -translate-y-1/2 z-[60] flex flex-col space-y-4 hidden lg:flex">
+        <div class="group relative flex items-center justify-end">
+            <span
+                class="opacity-0 group-hover:opacity-100 transition-opacity bg-ut-green text-white text-[10px] px-3 py-1 rounded-l-md mr-2 whitespace-nowrap">Chapter
+                01: Global Honor</span>
+            <a href="#honor"
+                class="w-12 h-1 bg-white/20 hover:bg-ut-gold transition-colors duration-300 rounded-full h-2"></a>
+        </div>
+        <div class="group relative flex items-center justify-end">
+            <span
+                class="opacity-0 group-hover:opacity-100 transition-opacity bg-ut-green text-white text-[10px] px-3 py-1 rounded-l-md mr-2 whitespace-nowrap">Chapter
+                02: Cultural Soul</span>
+            <a href="#heritage"
+                class="w-12 h-1 bg-white/20 hover:bg-ut-gold transition-colors duration-300 rounded-full h-2"></a>
+        </div>
+        <div class="group relative flex items-center justify-end">
+            <span
+                class="opacity-0 group-hover:opacity-100 transition-opacity bg-ut-green text-white text-[10px] px-3 py-1 rounded-l-md mr-2 whitespace-nowrap">Chapter
+                03: River Life</span>
+            <a href="#river"
+                class="w-12 h-1 bg-white/20 hover:bg-ut-gold transition-colors duration-300 rounded-full h-2"></a>
+        </div>
+        <div class="group relative flex items-center justify-end">
+            <span
+                class="opacity-0 group-hover:opacity-100 transition-opacity bg-ut-green text-white text-[10px] px-3 py-1 rounded-l-md mr-2 whitespace-nowrap">Chapter
+                04: The Mission</span>
+            <a href="#sustainable"
+                class="w-12 h-1 bg-white/20 hover:bg-ut-gold transition-colors duration-300 rounded-full h-2"></a>
+        </div>
+        <div class="group relative flex items-center justify-end">
+            <span
+                class="opacity-0 group-hover:opacity-100 transition-opacity bg-ut-green text-white text-[10px] px-3 py-1 rounded-l-md mr-2 whitespace-nowrap">The
+                Film</span>
+            <a href="#video-journey"
+                class="w-12 h-1 bg-white/20 hover:bg-ut-gold transition-colors duration-300 rounded-full h-2"></a>
+        </div>
+    </div>
+
     <!-- Header Navigation -->
     <nav class="fixed top-0 w-full z-50 px-6 lg:px-12 py-4 lg:py-8 flex justify-between items-center transition-all duration-700"
         id="main-nav">
@@ -637,23 +676,45 @@
                                 <p class="font-ci text-xl">ประเพณีตักบาตรเทโว</p>
                             </div>
                         </div>
-                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/626013.jpg')"><img
-                                src="Contents/626013.jpg" class="w-full h-full object-cover ken-burns"
-                                alt="Temple Tradition"></div>
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/626013.jpg')">
+                            <img src="Contents/626013.jpg" class="w-full h-full object-cover ken-burns"
+                                alt="Temple Tradition">
+                            <div class="absolute bottom-12 left-12 text-white text-shadow-enhanced tilt-inner">
+                                <h3 class="font-serif italic text-4xl">Sacred Heritage</h3>
+                                <p class="font-ci text-xl">มรดกแห่งความศรัทธา</p>
+                            </div>
+                        </div>
                         <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/22035642.jpg')">
                             <img src="Contents/22035642.jpg" class="w-full h-full object-cover ken-burns"
                                 alt="Wat Uposatharam">
+                            <div class="absolute bottom-12 left-12 text-white text-shadow-enhanced tilt-inner">
+                                <h3 class="font-serif italic text-4xl">Wat Uposatharam</h3>
+                                <p class="font-ci text-xl">วัดอุโปสถาราม (วัดโบสถ์)</p>
+                            </div>
                         </div>
-                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D7.jpg')"><img
-                                src="Contents/D7.jpg" class="w-full h-full object-cover ken-burns" alt="Mural Painting">
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D7.jpg')">
+                            <img src="Contents/D7.jpg" class="w-full h-full object-cover ken-burns"
+                                alt="Mural Painting">
+                            <div class="absolute bottom-12 left-12 text-white text-shadow-enhanced tilt-inner">
+                                <h3 class="font-serif italic text-4xl">Ancient Murals</h3>
+                                <p class="font-ci text-xl">จิตรกรรมฝาผนังโบราณ</p>
+                            </div>
                         </div>
-                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D8.jpg')"><img
-                                src="Contents/D8.jpg" class="w-full h-full object-cover ken-burns"
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D8.jpg')">
+                            <img src="Contents/D8.jpg" class="w-full h-full object-cover ken-burns"
                                 alt="Riverside Faith">
+                            <div class="absolute bottom-12 left-12 text-white text-shadow-enhanced tilt-inner">
+                                <h3 class="font-serif italic text-4xl">Riverside Alms</h3>
+                                <p class="font-ci text-xl">วิถีตักบาตรริมน้ำ</p>
+                            </div>
                         </div>
-                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/625992.jpg')"><img
-                                src="Contents/625992.jpg" class="w-full h-full object-cover ken-burns"
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/625992.jpg')">
+                            <img src="Contents/625992.jpg" class="w-full h-full object-cover ken-burns"
                                 alt="Sacred Moments">
+                            <div class="absolute bottom-12 left-12 text-white text-shadow-enhanced tilt-inner">
+                                <h3 class="font-serif italic text-4xl">Timeless Peace</h3>
+                                <p class="font-ci text-xl">ความสงบที่เหนือกาลเวลา</p>
+                            </div>
                         </div>
                     </div>
                     <!-- Navigation Dots -->
@@ -777,7 +838,7 @@
                     <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">Chapter 04: The
                         Mission</span>
                     <h2 class="font-serif text-5xl lg:text-7xl italic leading-tight text-white text-shadow-strong">
-                        Preserving for<br>the Future</h2>
+                        Preserving for the Future</h2>
                     <p class="font-ci text-3xl lg:text-4xl text-ut-gold text-shadow-strong">ร่วมมือ เพื่อความยั่งยืน</p>
                 </div>
                 <p class="text-emerald-100/70 font-light text-lg lg:text-xl leading-relaxed">
@@ -797,7 +858,7 @@
                                 The Evidence</h4>
                             <p class="text-white/60 font-light text-sm italic mb-2">Smart waste solutions for a pristine
                                 heritage town.</p>
-                            <p class="font-ci text-xl text-white/90 font-normal leading-tight">
+                            <p class="font-ci text-2xl text-white drop-shadow-lg font-bold leading-tight">
                                 การจัดการขยะอัจฉริยะเพื่อเมืองเก่าที่บริสุทธิ์</p>
                         </div>
                     </div>
@@ -813,7 +874,7 @@
                                 Nature's Scorecard</h4>
                             <p class="text-white/60 font-light text-sm italic mb-2">Preserving the Sakae Krang River
                                 ecosystem.</p>
-                            <p class="font-ci text-xl text-white/90 font-normal leading-tight">
+                            <p class="font-ci text-2xl text-white drop-shadow-lg font-bold leading-tight">
                                 อนุรักษ์ระบบนิเวศแม่น้ำสะแกกรัง</p>
                         </div>
                     </div>
@@ -868,7 +929,8 @@
                             class="glass-card-light p-8 rounded-3xl border border-stone-200 hover:bg-white/40 transition duration-300">
                             <h4 class="text-ut-gold font-serif text-4xl mb-2 italic">100</h4>
                             <p class="text-stone-800 font-bold text-xs uppercase tracking-widest opacity-100">
-                                Global Rankings<br><span class="font-ci text-lg font-normal opacity-90">อันดับโลก</span>
+                                Global Rankings<br><span
+                                    class="font-ci text-xl font-bold text-ut-green drop-shadow-sm opacity-100">อันดับโลก</span>
                             </p>
                         </div>
                         <div
@@ -876,7 +938,8 @@
                             <h4 class="text-ut-gold font-serif text-4xl mb-2 italic">2024</h4>
                             <p class="text-stone-800 font-bold text-xs uppercase tracking-widest opacity-100">
                                 Award Year<br><span
-                                    class="font-ci text-lg font-normal opacity-90">ปีที่ได้รับรางวัล</span></p>
+                                    class="font-ci text-xl font-bold text-ut-green drop-shadow-sm opacity-100">ปีที่ได้รับรางวัล</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1096,8 +1159,8 @@
         <div class="max-w-7xl mx-auto px-8 relative z-10">
             <div class="text-center mb-16">
                 <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">The Evidence</span>
-                <h2 class="font-serif text-5xl lg:text-7xl italic mt-4">Nature's Scorecard</h2>
-                <p class="font-ci text-3xl lg:text-4xl text-stone-300 mt-2">ตัวชี้วัดความยั่งยืน</p>
+                <h2 class="font-serif text-5xl lg:text-7xl italic mt-4 text-white">Nature's Scorecard</h2>
+                <p class="font-ci text-3xl lg:text-4xl text-white mt-2 drop-shadow-lg">ตัวชี้วัดความยั่งยืน</p>
             </div>
 
             <!-- Data Contrast Comparison -->
@@ -1218,8 +1281,8 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- News Item 1 -->
                 <div class="group cursor-pointer">
-                    <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-stone-100">
-                        <img src="Contents/625988.jpg"
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-stone-100 shadow-md">
+                        <img src="Contents/2024.jpg"
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                             alt="News 1">
                     </div>
@@ -1231,7 +1294,7 @@
                 <!-- News Item 2 -->
                 <div class="group cursor-pointer">
                     <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-stone-100">
-                        <img src="Contents/trok-rong-ya-walking-street.jpg"
+                        <img src="Contents/market-old-town.jpg"
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                             alt="News 2">
                     </div>
