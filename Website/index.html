@@ -830,65 +830,80 @@
             <div class="grid lg:grid-cols-12 gap-16 items-start">
                 <!-- Left: Golden Ratio Construction -->
                 <div
-                    class="lg:col-span-7 relative p-12 border border-stone-300 rounded-[2rem] bg-white/40 backdrop-blur-sm">
+                    class="lg:col-span-7 relative p-12 border border-stone-300 rounded-[2rem] bg-white/40 backdrop-blur-sm shadow-xl">
                     <div
-                        class="absolute -top-3 -left-3 bg-ut-gold text-white px-4 py-1 text-[10px] tracking-widest font-bold uppercase">
+                        class="absolute -top-3 -left-3 bg-ut-gold text-white px-4 py-1 text-[10px] tracking-widest font-bold uppercase shadow-md">
                         Fig. 01: Construction</div>
 
                     <!-- The Grid Container -->
                     <div
-                        class="aspect-[4/3] relative border border-stone-200 flex items-center justify-center overflow-hidden">
+                        class="aspect-[4/3] relative border border-stone-200 flex items-center justify-center overflow-hidden bg-white/50">
                         <!-- Grid Lines -->
-                        <div class="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-20">
-                            <div class="border-r border-stone-400 h-full"></div>
-                            <div class="border-r border-stone-400 h-full"></div>
-                            <div class="border-r border-stone-400 h-full"></div>
-                            <div class="border-r border-stone-400 h-full"></div>
-                            <div class="border-r border-stone-400 h-full"></div>
-                            <div class="border-r border-stone-400 h-full"></div>
+                        <div class="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-10">
+                            <div class="border-r border-stone-400 h-full border-dashed"></div>
+                            <div class="border-r border-stone-400 h-full border-dashed"></div>
+                            <div class="border-r border-stone-400 h-full border-dashed"></div>
+                            <div class="border-r border-stone-400 h-full border-dashed"></div>
+                            <div class="border-r border-stone-400 h-full border-dashed"></div>
+                            <div class="border-r border-stone-400 h-full border-dashed"></div>
                         </div>
 
                         <!-- Golden Circular Geometry -->
                         <div
-                            class="absolute w-96 h-96 border border-ut-green/50 rounded-full flex items-center justify-center">
+                            class="absolute w-96 h-96 border border-ut-green/30 rounded-full flex items-center justify-center animate-[spin_60s_linear_infinite]">
                             <div class="absolute w-full h-[1px] bg-stone-300"></div>
                             <div class="absolute h-full w-[1px] bg-stone-300"></div>
                             <div
-                                class="w-64 h-64 border border-ut-gold/50 rounded-full flex items-center justify-center">
-                                <div class="w-40 h-40 border border-ut-green/30 rounded-full"></div>
+                                class="w-64 h-64 border border-ut-gold/30 rounded-full flex items-center justify-center">
+                                <div class="w-40 h-40 border border-ut-green/20 rounded-full"></div>
                             </div>
                         </div>
 
                         <!-- The Symbol Intersect -->
-                        <div class="relative z-10 w-32 h-32 border-2 border-ut-green rotate-45 mix-blend-multiply">
+                        <div
+                            class="relative z-10 w-32 h-32 border-2 border-ut-green rotate-45 mix-blend-multiply opacity-80">
                         </div>
                         <div
-                            class="relative z-10 w-32 h-32 border-2 border-ut-gold -ml-16 mix-blend-multiply rounded-full">
+                            class="relative z-10 w-32 h-32 border-2 border-ut-gold -ml-16 mix-blend-multiply rounded-full opacity-80">
                         </div>
 
                         <!-- Annotations -->
                         <div class="absolute top-8 right-8 text-right">
-                            <span class="font-ci text-stone-500 text-sm">River Dynamics (1.618)</span>
+                            <span class="font-ci text-stone-500 text-sm">River Dynamics (Φ 1.618)</span>
                             <div class="w-16 h-[1px] bg-stone-400 ml-auto mt-1"></div>
+                            <p class="text-[9px] text-stone-300 uppercase mt-1">Sakae Krang Scale</p>
                         </div>
                         <div class="absolute bottom-8 left-8">
                             <div class="w-16 h-[1px] bg-stone-400 mb-1"></div>
                             <span class="font-ci text-stone-500 text-sm">Spiritual Anchor</span>
+                            <p class="text-[9px] text-stone-300 uppercase mt-1">Wat Sangkat Rattanakhiri</p>
                         </div>
                     </div>
 
-                    <div class="mt-8 grid grid-cols-3 gap-4 text-center">
-                        <div>
-                            <div class="h-1 bg-ut-green mb-2 opacity-50"></div>
-                            <p class="text-[9px] uppercase tracking-widest text-stone-400">Nature</p>
+                    <!-- Color Palette Strips -->
+                    <div class="mt-8 grid grid-cols-3 gap-4">
+                        <div class="space-y-2 group cursor-pointer">
+                            <div class="h-12 bg-[#1b4332] rounded-lg shadow-md group-hover:scale-105 transition"></div>
+                            <div class="text-center">
+                                <p class="text-[10px] uppercase font-bold text-stone-500">Emerald</p>
+                                <p class="text-[9px] font-mono text-stone-400">#1B4332</p>
+                            </div>
                         </div>
-                        <div>
-                            <div class="h-1 bg-ut-gold mb-2 opacity-50"></div>
-                            <p class="text-[9px] uppercase tracking-widest text-stone-400">Faith</p>
+                        <div class="space-y-2 group cursor-pointer">
+                            <div class="h-12 bg-[#b08968] rounded-lg shadow-md group-hover:scale-105 transition"></div>
+                            <div class="text-center">
+                                <p class="text-[10px] uppercase font-bold text-stone-500">Heritage Gold</p>
+                                <p class="text-[9px] font-mono text-stone-400">#B08968</p>
+                            </div>
                         </div>
-                        <div>
-                            <div class="h-1 bg-stone-300 mb-2 opacity-50"></div>
-                            <p class="text-[9px] uppercase tracking-widest text-stone-400">History</p>
+                        <div class="space-y-2 group cursor-pointer">
+                            <div
+                                class="h-12 bg-[#f8f4f0] border border-stone-200 rounded-lg shadow-sm group-hover:scale-105 transition">
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[10px] uppercase font-bold text-stone-500">Antique Paper</p>
+                                <p class="text-[9px] font-mono text-stone-400">#F8F4F0</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -910,30 +925,57 @@
                     </div>
 
                     <!-- Visual Texture Strip -->
-                    <div class="space-y-4">
-                        <h4 class="text-[10px] uppercase tracking-widest text-stone-400 font-bold">Pattern System</h4>
-                        <div class="grid grid-cols-3 gap-4 h-24">
-                            <!-- River Wave Pattern -->
+                    <div class="space-y-6">
+                        <h4
+                            class="text-[10px] uppercase tracking-widest text-stone-400 font-bold border-b border-stone-200 pb-2">
+                            Pattern System</h4>
+
+                        <!-- Pattern 1: River -->
+                        <div class="flex items-center space-x-6 group">
                             <div
-                                class="bg-ut-green/10 rounded-lg flex items-center justify-center overflow-hidden border border-ut-green/20">
-                                <svg class="w-12 h-12 text-ut-green/40 fill-current" viewBox="0 0 24 24">
+                                class="w-16 h-16 bg-ut-green/10 rounded-full flex items-center justify-center border border-ut-green/20 group-hover:bg-ut-green/20 transition">
+                                <svg class="w-8 h-8 text-ut-green opacity-60" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5">
                                     <path
-                                        d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2 2 2 4 2v2c-2 0-2-2-4-2s-2 2-4 2-2-2-4 2-2 2-4 2-2-2-4-2s-2 2-4 2v-2z" />
+                                        d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2 2 2 4 2v2c-2 0-2-2-4-2s-2 2-4 2-2-2-4 2-2 2-4 2-2-2-4 2-2 2-4 2v-2z" />
                                 </svg>
                             </div>
-                            <!-- Faith Lotus Pattern -->
+                            <div>
+                                <h5 class="font-serif text-lg text-ut-green italic">The River Flow</h5>
+                                <p class="text-xs text-stone-500 font-light">Represents the Sakae Krang River, the
+                                    lifeline of our people.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pattern 2: Faith -->
+                        <div class="flex items-center space-x-6 group">
                             <div
-                                class="bg-ut-gold/10 rounded-lg flex items-center justify-center overflow-hidden border border-ut-gold/20">
-                                <svg class="w-12 h-12 text-ut-gold/40 fill-current" viewBox="0 0 24 24">
-                                    <path d="M12 2L2 22h20L12 2zm0 4l6.5 13h-13L12 6z" />
+                                class="w-16 h-16 bg-ut-gold/10 rounded-full flex items-center justify-center border border-ut-gold/20 group-hover:bg-ut-gold/20 transition">
+                                <svg class="w-8 h-8 text-ut-gold opacity-60" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z" />
+                                    <!-- Star/Lotus abstract -->
                                 </svg>
                             </div>
-                            <!-- Fabric Pattern -->
+                            <div>
+                                <h5 class="font-serif text-lg text-ut-gold italic">The Golden Lotus</h5>
+                                <p class="text-xs text-stone-500 font-light">Symbolizing Buddhism and the unwavering
+                                    faith of Uthai Thani.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pattern 3: Community -->
+                        <div class="flex items-center space-x-6 group">
                             <div
-                                class="bg-stone-200 rounded-lg flex items-center justify-center overflow-hidden border border-stone-300">
-                                <div class="w-full h-full opacity-30"
-                                    style="background-image: radial-gradient(#4a4a4a 1px, transparent 1px); background-size: 8px 8px;">
+                                class="w-16 h-16 bg-stone-200 rounded-full flex items-center justify-center border border-stone-300 group-hover:bg-stone-300 transition">
+                                <div
+                                    class="w-8 h-8 border-2 border-stone-400 opacity-40 rounded-sm transform rotate-45">
                                 </div>
+                            </div>
+                            <div>
+                                <h5 class="font-serif text-lg text-stone-600 italic">The Interwoven Craft</h5>
+                                <p class="text-xs text-stone-500 font-light">Inspired by bamboo weaving and the
+                                    close-knit community.</p>
                             </div>
                         </div>
                     </div>
