@@ -383,12 +383,14 @@
     </div>
 
     <!-- Header Navigation -->
-    <nav class="fixed top-0 w-full z-50 px-12 py-8 flex justify-between items-center transition-all duration-700"
+    <nav class="fixed top-0 w-full z-50 px-6 lg:px-12 py-4 lg:py-8 flex justify-between items-center transition-all duration-700"
         id="main-nav">
         <div class="flex flex-col">
-            <span class="text-white font-serif text-3xl font-bold tracking-tighter transition-colors duration-500"
+            <span
+                class="text-white font-serif text-2xl lg:text-3xl font-bold tracking-tighter transition-colors duration-500"
                 id="nav-logo">Uthai Thani</span>
-            <span class="text-white/60 text-[9px] tracking-[0.4em] uppercase font-bold transition-colors duration-500"
+            <span
+                class="text-white/60 text-[8px] lg:text-[9px] tracking-[0.4em] uppercase font-bold transition-colors duration-500"
                 id="nav-sub">Old Town Heritage</span>
         </div>
         <div class="hidden lg:flex space-x-12 text-white/80 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors duration-500"
@@ -399,7 +401,7 @@
             <a href="#river" class="hover:text-ut-gold transition">The River</a>
             <a href="#sustainable" class="hover:text-ut-gold transition">The Action</a>
         </div>
-        <div class="border border-white/30 text-white text-[9px] px-4 py-2 rounded-full font-bold tracking-[0.1em] backdrop-blur-sm"
+        <div class="hidden md:block border border-white/30 text-white text-[9px] px-4 py-2 rounded-full font-bold tracking-[0.1em] backdrop-blur-sm"
             id="nav-badge">GREEN DESTINATIONS 2024</div>
     </nav>
 
@@ -421,14 +423,14 @@
                     Join the Movement | <span class="font-ci text-lg">เข้าร่วมวิถีแห่งความยั่งยืน</span>
                 </p>
                 <h1
-                    class="font-serif text-6xl md:text-9xl leading-none mb-6 animate-[fadeInUp_2s_ease-out_0.5s] text-shadow-strong">
+                    class="font-serif text-5xl md:text-9xl leading-none mb-6 animate-[fadeInUp_2s_ease-out_0.5s] text-shadow-strong">
                     Timeless <br> <span class="italic text-ut-green">Living</span>
                 </h1>
-                <p class="font-ci text-4xl text-ut-gold mt-4 mb-8 animate-[fadeInUp_2s_ease-out_1s]">
+                <p class="font-ci text-3xl md:text-4xl text-ut-gold mt-4 mb-8 animate-[fadeInUp_2s_ease-out_1s]">
                     ชีวิตที่งดงามเหนือกาลเวลา
                 </p>
                 <p
-                    class="text-stone-300 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-10 animate-[fadeInUp_2s_ease-out_1.2s]">
+                    class="text-stone-300 text-base md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-10 animate-[fadeInUp_2s_ease-out_1.2s]">
                     Discover the Rhythm of Nature.
                 </p>
                 <p
@@ -568,13 +570,16 @@
             <div class="order-2 lg:order-1 space-y-12">
                 <div class="space-y-4">
                     <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">Chapter 01</span>
-                    <h2 class="font-serif text-6xl text-ut-green italic">Global Recognition</h2>
-                    <p class="font-ci text-3xl text-ut-gold">เกียรติยศแห่งเมืองเก่า</p>
+                    <h2 class="font-serif text-5xl lg:text-7xl text-ut-green italic">Global Recognition</h2>
+                    <p class="font-ci text-3xl lg:text-4xl text-ut-gold">เกียรติยศแห่งเมืองเก่า</p>
                 </div>
                 <div class="w-20 h-[1px] bg-ut-gold"></div>
                 <p class="text-gray-600 leading-relaxed text-xl font-light serif-body italic">
                     "Uthai Thani Old Town stands as a beacon of sustainable tourism, balancing the preservation of
-                    ancient traditions with a forward-thinking green mindset."
+                    ancient traditions with a forward-thinking green mindset."<br>
+                    <span
+                        class="font-ci text-lg text-ut-gold not-italic mt-2 block">"เมืองเก่าอุทัยธานีคือต้นแบบแห่งการท่องเที่ยวอย่างยั่งยืน
+                        ที่ผสานรักษาวิถีชีวิตดั้งเดิมเข้ากับแนวคิดสีเขียวเพื่ออนาคต"</span>
                 </p>
                 <div class="flex items-center space-x-8 pt-6">
                     <img src="Contents/2024.jpg" class="h-28 object-contain" alt="Green Destinations Logo">
@@ -584,20 +589,26 @@
                 </div>
             </div>
             <!-- Auto Slider 1: Global Honor -->
-            <div class="order-1 lg:order-2 relative rounded-[4rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] aspect-[4/5] bg-stone-200 tilt-card"
-                data-carousel="honor">
-                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D1.jpg')"><img
-                        src="Contents/D1.jpg" class="w-full h-full object-cover ken-burns" alt="Uthai City View">
+            <div class="order-1 lg:order-2 relative group">
+                <div class="relative rounded-[4rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] aspect-[4/5] bg-stone-200 tilt-card"
+                    data-carousel="honor">
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D1.jpg')"><img
+                            src="Contents/D1.jpg" class="w-full h-full object-cover ken-burns" alt="Uthai City View">
+                    </div>
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D10.jpg')"><img
+                            src="Contents/D10.jpg" class="w-full h-full object-cover ken-burns" alt="Drone Perspective">
+                    </div>
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D5.jpg')"><img
+                            src="Contents/D5.jpg" class="w-full h-full object-cover ken-burns" alt="Aerial River"></div>
+                    <!-- 2024 Award Image -->
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/2024.jpg')"><img
+                            src="Contents/2024.jpg" class="w-full h-full object-cover ken-burns" alt="2024 Award"></div>
                 </div>
-                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D10.jpg')"><img
-                        src="Contents/D10.jpg" class="w-full h-full object-cover ken-burns" alt="Drone Perspective">
-                </div>
-                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D5.jpg')"><img
-                        src="Contents/D5.jpg" class="w-full h-full object-cover ken-burns" alt="Aerial River"></div>
-                <!-- 2024 Award Image -->
-                <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/2024.jpg')"><img
-                        src="Contents/2024.jpg" class="w-full h-full object-cover ken-burns" alt="2024 Award"></div>
+                <!-- Navigation Dots -->
+                <div class="carousel-dots absolute -bottom-10 left-1/2 -translate-x-1/2 flex space-x-3"
+                    data-dots="honor"></div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -606,47 +617,59 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-28">
                 <p class="text-ut-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-6">Chapter 02</p>
-                <h2 class="font-serif text-7xl text-ut-green italic text-shadow-strong">The Soul of Faith</h2>
-                <p class="font-ci text-4xl text-ut-gold mt-4 text-shadow-strong">รากแก้วแห่งศรัทธา</p>
+                <h2 class="font-serif text-5xl lg:text-7xl text-ut-green italic text-shadow-strong">The Soul of Faith
+                </h2>
+                <p class="font-ci text-3xl lg:text-4xl text-ut-gold mt-4 text-shadow-strong">รากแก้วแห่งศรัทธา</p>
                 <div class="chapter-line"></div>
             </div>
 
             <div class="grid lg:grid-cols-12 gap-16">
                 <!-- Large Image Slider: Faith -->
-                <div class="lg:col-span-7 relative rounded-[5rem] overflow-hidden shadow-2xl h-[500px] lg:h-[750px] border-[16px] border-white tilt-card"
-                    data-carousel="heritage">
-                    <!-- Tak Bat Devo - Signature Event -->
-                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/626013.jpg')">
-                        <img src="Contents/626013.jpg" class="w-full h-full object-cover ken-burns" alt="Tak Bat Devo">
-                        <div class="absolute bottom-12 left-12 text-white text-shadow-enhanced tilt-inner">
-                            <h3 class="font-serif italic text-4xl">Tak Bat Devo</h3>
-                            <p class="font-ci text-xl">ประเพณีตักบาตรเทโว</p>
+                <div class="lg:col-span-7 relative group">
+                    <div class="relative rounded-[5rem] overflow-hidden shadow-2xl h-[500px] lg:h-[750px] border-[16px] border-white tilt-card"
+                        data-carousel="heritage">
+                        <!-- Tak Bat Devo - Signature Event -->
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/626013.jpg')">
+                            <img src="Contents/626013.jpg" class="w-full h-full object-cover ken-burns"
+                                alt="Tak Bat Devo">
+                            <div class="absolute bottom-12 left-12 text-white text-shadow-enhanced tilt-inner">
+                                <h3 class="font-serif italic text-4xl">Tak Bat Devo</h3>
+                                <p class="font-ci text-xl">ประเพณีตักบาตรเทโว</p>
+                            </div>
+                        </div>
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/626013.jpg')"><img
+                                src="Contents/626013.jpg" class="w-full h-full object-cover ken-burns"
+                                alt="Temple Tradition"></div>
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/22035642.jpg')">
+                            <img src="Contents/22035642.jpg" class="w-full h-full object-cover ken-burns"
+                                alt="Wat Uposatharam">
+                        </div>
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D7.jpg')"><img
+                                src="Contents/D7.jpg" class="w-full h-full object-cover ken-burns" alt="Mural Painting">
+                        </div>
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D8.jpg')"><img
+                                src="Contents/D8.jpg" class="w-full h-full object-cover ken-burns"
+                                alt="Riverside Faith">
+                        </div>
+                        <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/625992.jpg')"><img
+                                src="Contents/625992.jpg" class="w-full h-full object-cover ken-burns"
+                                alt="Sacred Moments">
                         </div>
                     </div>
-                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/626013.jpg')"><img
-                            src="Contents/626013.jpg" class="w-full h-full object-cover ken-burns"
-                            alt="Temple Tradition"></div>
-                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/22035642.jpg')">
-                        <img src="Contents/22035642.jpg" class="w-full h-full object-cover ken-burns"
-                            alt="Wat Uposatharam">
-                    </div>
-                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D7.jpg')"><img
-                            src="Contents/D7.jpg" class="w-full h-full object-cover ken-burns" alt="Mural Painting">
-                    </div>
-                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D8.jpg')"><img
-                            src="Contents/D8.jpg" class="w-full h-full object-cover ken-burns" alt="Riverside Faith">
-                    </div>
-                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/625992.jpg')"><img
-                            src="Contents/625992.jpg" class="w-full h-full object-cover ken-burns" alt="Sacred Moments">
-                    </div>
+                    <!-- Navigation Dots -->
+                    <div class="carousel-dots absolute -bottom-10 left-1/2 -translate-x-1/2 flex space-x-3"
+                        data-dots="heritage"></div>
                 </div>
 
                 <div class="lg:col-span-5 flex flex-col justify-center space-y-12">
                     <div class="space-y-6">
-                        <h3 class="font-serif text-5xl text-ut-green italic">Sacred Atmosphere</h3>
-                        <p class="text-gray-500 font-light text-xl leading-relaxed italic">
+                        <h3 class="font-serif text-4xl lg:text-5xl text-ut-green italic">Sacred Atmosphere</h3>
+                        <p class="text-gray-500 font-light text-lg lg:text-xl leading-relaxed italic">
                             The sound of morning prayers blends with the gentle flow of the Sakae Krang, creating an
-                            atmosphere where time stands still.
+                            atmosphere where time stands still.<br>
+                            <span
+                                class="font-ci text-lg text-ut-gold not-italic mt-2 block">เสียงสวดมนต์ยามเช้าที่ประสานกับสายน้ำสะแกกรัง
+                                สร้างบรรยากาศที่กาลเวลาดูเหมือนจะหยุดนิ่ง</span>
                         </p>
                     </div>
                     <div class="grid grid-cols-2 gap-8">
@@ -731,11 +754,15 @@
                     </div>
                 </div>
                 <div class="space-y-8">
-                    <h2 class="font-serif text-5xl text-ut-green italic leading-tight">Vibrant <br>Community Life</h2>
-                    <p class="font-ci text-3xl text-ut-gold">วิถีชีวิตชุมชนที่งดงาม</p>
+                    <h2 class="font-serif text-5xl lg:text-7xl text-ut-green italic leading-tight">Vibrant <br>Community
+                        Life</h2>
+                    <p class="font-ci text-3xl lg:text-4xl text-ut-gold">วิถีชีวิตชุมชนที่งดงาม</p>
                     <p class="text-gray-600 font-light text-lg leading-relaxed">
                         From the historic Trok Rong Ya to the friendly smiles of the locals, Uthai Thani is a place
-                        where community spirit thrives.
+                        where community spirit thrives.<br>
+                        <span
+                            class="font-ci text-lg text-ut-gold mt-2 block">สัมผัสเสน่ห์ตรอกโรงยาและรอยยิ้มที่อบอุ่นของชาวอุทัยธานี
+                            เมืองที่หัวใจของชุมชนเข้มแข็งเสมอ</span>
                     </p>
                 </div>
             </div>
@@ -743,86 +770,78 @@
     </section>
 
     <!-- 5. SUSTAINABLE FUTURE -->
-    <section id="sustainable" class="py-40 bg-emerald-950 text-white px-8 relative overflow-hidden">
+    <section id="sustainable" class="py-40 bg-stone-900 text-white px-8 relative overflow-hidden">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-28 items-center relative z-10">
             <div class="space-y-16">
                 <div class="space-y-6">
                     <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">Chapter 04: The
                         Mission</span>
-                    <h2 class="font-serif text-7xl italic leading-tight">Preserving for<br>the Future</h2>
-                    <p class="font-ci text-4xl text-ut-gold">ร่วมมือ เพื่อความยั่งยืน</p>
+                    <h2 class="font-serif text-5xl lg:text-7xl italic leading-tight text-white text-shadow-strong">
+                        Preserving for<br>the Future</h2>
+                    <p class="font-ci text-3xl lg:text-4xl text-ut-gold text-shadow-strong">ร่วมมือ เพื่อความยั่งยืน</p>
                 </div>
-                <p class="text-emerald-100/70 font-light text-xl leading-relaxed">
+                <p class="text-emerald-100/70 font-light text-lg lg:text-xl leading-relaxed">
                     Protecting our river means protecting our soul. Through community-led waste management and
                     ecological awareness, we ensure the Sakae Krang flows clean for generations to come.
                 </p>
 
                 <div class="space-y-8">
                     <div
-                        class="flex items-center space-x-10 bg-stone-900 p-10 rounded-[3.5rem] border border-stone-800 hover:shadow-2xl transition-all duration-500 group">
-                        <div class="text-ut-gold font-serif italic text-6xl">01</div>
+                        class="flex items-center space-x-10 backdrop-blur-2xl bg-white/5 p-10 rounded-[3.5rem] border border-white/10 hover:border-ut-gold/30 hover:bg-white/10 transition-all duration-500 group shadow-2xl">
+                        <div
+                            class="text-ut-gold font-serif italic text-6xl drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                            01</div>
                         <div>
                             <h4
                                 class="font-bold text-xl mb-1 tracking-tight text-white group-hover:text-ut-gold transition-colors">
                                 The Evidence</h4>
-                            <p class="text-emerald-100/60 font-light text-sm italic">Smart waste solutions for a
-                                pristine heritage town.<br><span
-                                    class="font-ci text-lg text-emerald-100/80 not-italic">การจัดการขยะอัจฉริยะเพื่อเมืองเก่าที่บริสุทธิ์</span>
-                            </p>
+                            <p class="text-white/60 font-light text-sm italic mb-2">Smart waste solutions for a pristine
+                                heritage town.</p>
+                            <p class="font-ci text-xl text-white/90 font-normal leading-tight">
+                                การจัดการขยะอัจฉริยะเพื่อเมืองเก่าที่บริสุทธิ์</p>
                         </div>
                     </div>
 
                     <div
-                        class="flex items-center space-x-10 bg-stone-900 p-10 rounded-[3.5rem] border border-stone-800 hover:shadow-2xl transition-all duration-500 group">
-                        <div class="text-ut-gold font-serif italic text-6xl">02</div>
+                        class="flex items-center space-x-10 backdrop-blur-2xl bg-white/5 p-10 rounded-[3.5rem] border border-white/10 hover:border-ut-gold/30 hover:bg-white/10 transition-all duration-500 group shadow-2xl">
+                        <div
+                            class="text-ut-gold font-serif italic text-6xl drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                            02</div>
                         <div>
                             <h4
                                 class="font-bold text-xl mb-1 tracking-tight text-white group-hover:text-ut-gold transition-colors">
                                 Nature's Scorecard</h4>
-                            <p class="text-emerald-100/60 font-light text-sm italic">Preserving the Sakae Krang River
-                                ecosystem.<br><span
-                                    class="font-ci text-lg text-emerald-100/80 not-italic">อนุรักษ์ระบบนิเวศแม่น้ำสะแกกรัง</span>
-                            </p>
+                            <p class="text-white/60 font-light text-sm italic mb-2">Preserving the Sakae Krang River
+                                ecosystem.</p>
+                            <p class="font-ci text-xl text-white/90 font-normal leading-tight">
+                                อนุรักษ์ระบบนิเวศแม่น้ำสะแกกรัง</p>
                         </div>
                     </div>
                 </div>
-                <div
-                    class="flex items-center space-x-10 bg-white/5 p-10 rounded-[3.5rem] border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-500">
-                    <div class="text-ut-gold font-serif italic text-6xl">02</div>
-                    <div>
-                        <h4 class="font-bold text-xl mb-1 tracking-tight">Community Action</h4>
-                        <p class="text-emerald-100/40 font-light text-sm italic">Locals leading the charge in
-                            sustainable living.</p>
-                    </div>
-                </div>
-
-                <div
-                    class="flex items-center space-x-10 bg-white/5 p-10 rounded-[3.5rem] border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-500">
-                    <div class="text-ut-gold font-serif italic text-6xl">03</div>
-                    <div>
-                        <h4 class="font-bold text-xl mb-1 tracking-tight">Water Wisdom</h4>
-                        <p class="text-emerald-100/40 font-light text-sm italic">Preserving the Sakae Krang River
-                            ecosystem.</p>
-                    </div>
-                </div>
             </div>
-        </div>
-        <!-- Auto Slide Sustainable -->
-        <div class="relative rounded-[5rem] overflow-hidden shadow-2xl aspect-square lg:h-[650px] border-[16px] border-emerald-900/40"
-            data-carousel="sustainable">
-            <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/1.jpg')"><img
-                    src="Contents/1.jpg" class="w-full h-full object-cover ken-burns" alt="Waste Solution"></div>
-            <div class="slide-fade h-full cursor-zoom-in"
-                onclick="openLightbox('Contents/629844593_122249944874130725_4926295052052421751_n.jpg')"><img
-                    src="Contents/629844593_122249944874130725_4926295052052421751_n.jpg"
-                    class="w-full h-full object-cover ken-burns" alt="Action Smile"></div>
-            <div class="slide-fade h-full cursor-zoom-in"
-                onclick="openLightbox('Contents/629951761_122249944898130725_2190588064083708674_n.jpg')"><img
-                    src="Contents/629951761_122249944898130725_2190588064083708674_n.jpg"
-                    class="w-full h-full object-cover ken-burns" alt="Participation"></div>
-            <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D2.jpg')"><img
-                    src="Contents/D2.jpg" class="w-full h-full object-cover ken-burns" alt="Irrigation"></div>
-        </div>
+
+            <!-- Carousel Component -->
+            <div class="relative group">
+                <div class="relative rounded-[5rem] overflow-hidden shadow-2xl aspect-square lg:h-[650px] border-[16px] border-white/10"
+                    data-carousel="sustainable">
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/1.jpg')"><img
+                            src="Contents/1.jpg" class="w-full h-full object-cover ken-burns" alt="Waste Solution">
+                    </div>
+                    <div class="slide-fade h-full cursor-zoom-in"
+                        onclick="openLightbox('Contents/629844593_122249944874130725_4926295052052421751_n.jpg')"><img
+                            src="Contents/629844593_122249944874130725_4926295052052421751_n.jpg"
+                            class="w-full h-full object-cover ken-burns" alt="Action Smile"></div>
+                    <div class="slide-fade h-full cursor-zoom-in"
+                        onclick="openLightbox('Contents/629951761_122249944898130725_2190588064083708674_n.jpg')"><img
+                            src="Contents/629951761_122249944898130725_2190588064083708674_n.jpg"
+                            class="w-full h-full object-cover ken-burns" alt="Participation"></div>
+                    <div class="slide-fade h-full cursor-zoom-in" onclick="openLightbox('Contents/D2.jpg')"><img
+                            src="Contents/D2.jpg" class="w-full h-full object-cover ken-burns" alt="Irrigation"></div>
+                </div>
+                <!-- Navigation Dots -->
+                <div class="carousel-dots absolute -bottom-10 left-1/2 -translate-x-1/2 flex space-x-3"
+                    data-dots="sustainable"></div>
+            </div>
         </div>
         <!-- Background Decor -->
         <div
@@ -831,33 +850,31 @@
     </section>
 
     <!-- 6. CINEMATIC JOURNEY (NEW) -->
-    <section id="video-journey" class="py-40 bg-stone-900 overflow-hidden relative">
+    <section id="video-journey" class="py-40 bg-stone-50 overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-24 items-center">
                 <div class="space-y-12">
                     <div class="space-y-4">
                         <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">The Film</span>
-                        <h2 class="font-serif text-6xl text-white italic text-shadow-strong">A Sustainable Journey</h2>
-                        <p class="font-ci text-3xl text-ut-gold text-shadow-strong">เส้นทางสู่ความยั่งยืน</p>
+                        <h2 class="font-serif text-5xl lg:text-6xl text-ut-green italic">A Sustainable Journey</h2>
+                        <p class="font-ci text-3xl lg:text-4xl text-stone-900">เส้นทางสู่ความยั่งยืน</p>
                     </div>
-                    <p class="text-white/60 text-xl font-light leading-relaxed">
+                    <p class="text-stone-600 text-xl font-light leading-relaxed">
                         Experience the visual story of Uthai Thani Old Town through our officially submitted
                         documentary. Witness the harmony of people, nature, and heritage.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div
-                            class="glass-card-light p-8 rounded-3xl border border-white/40 hover:bg-white/30 transition duration-300">
-                            <h4 class="text-ut-gold font-serif text-4xl mb-2 italic text-shadow-strong">100</h4>
-                            <p
-                                class="text-white font-bold text-xs uppercase tracking-widest opacity-100 text-shadow-md">
+                            class="glass-card-light p-8 rounded-3xl border border-stone-200 hover:bg-white/40 transition duration-300">
+                            <h4 class="text-ut-gold font-serif text-4xl mb-2 italic">100</h4>
+                            <p class="text-stone-800 font-bold text-xs uppercase tracking-widest opacity-100">
                                 Global Rankings<br><span class="font-ci text-lg font-normal opacity-90">อันดับโลก</span>
                             </p>
                         </div>
                         <div
-                            class="glass-card-light p-8 rounded-3xl border border-white/40 hover:bg-white/30 transition duration-300">
-                            <h4 class="text-ut-gold font-serif text-4xl mb-2 italic text-shadow-strong">2024</h4>
-                            <p
-                                class="text-white font-bold text-xs uppercase tracking-widest opacity-100 text-shadow-md">
+                            class="glass-card-light p-8 rounded-3xl border border-stone-200 hover:bg-white/40 transition duration-300">
+                            <h4 class="text-ut-gold font-serif text-4xl mb-2 italic">2024</h4>
+                            <p class="text-stone-800 font-bold text-xs uppercase tracking-widest opacity-100">
                                 Award Year<br><span
                                     class="font-ci text-lg font-normal opacity-90">ปีที่ได้รับรางวัล</span></p>
                         </div>
@@ -909,8 +926,8 @@
             <div class="text-center mb-24">
                 <span class="text-stone-400 font-bold tracking-[0.4em] uppercase text-xs">The Living Design
                     System</span>
-                <h2 class="font-serif text-6xl text-ut-green italic mt-4">The DNA of Uthai Thani</h2>
-                <p class="font-ci text-3xl text-ut-gold mt-2">อัตลักษณ์เมืองพระชนกจักรี</p>
+                <h2 class="font-serif text-5xl lg:text-7xl text-ut-green italic mt-4">The DNA of Uthai Thani</h2>
+                <p class="font-ci text-3xl lg:text-4xl text-ut-gold mt-2">อัตลักษณ์เมืองพระชนกจักรี</p>
                 <div class="w-24 h-[1px] bg-ut-gold mx-auto mt-8"></div>
             </div>
 
@@ -1079,8 +1096,8 @@
         <div class="max-w-7xl mx-auto px-8 relative z-10">
             <div class="text-center mb-16">
                 <span class="text-ut-gold font-bold tracking-[0.4em] uppercase text-xs">The Evidence</span>
-                <h2 class="font-serif text-5xl italic mt-4">Nature's Scorecard</h2>
-                <p class="font-ci text-xl text-stone-300 mt-2">ตัวชี้วัดความยั่งยืน</p>
+                <h2 class="font-serif text-5xl lg:text-7xl italic mt-4">Nature's Scorecard</h2>
+                <p class="font-ci text-3xl lg:text-4xl text-stone-300 mt-2">ตัวชี้วัดความยั่งยืน</p>
             </div>
 
             <!-- Data Contrast Comparison -->
@@ -1264,22 +1281,29 @@
             </div>
 
             <div class="space-y-6">
-                <h4 class="font-bold text-xs uppercase tracking-widest text-stone-400">Information</h4>
+                <h4 class="font-bold text-xs uppercase tracking-widest text-stone-400">Information | <span
+                        class="font-ci text-sm">ข้อมูลข่าวสาร</span></h4>
                 <ul class="space-y-3 text-sm text-stone-600">
-                    <li><a href="#" class="hover:text-ut-green transition">Annual Budget Report</a></li>
-                    <li><a href="#" class="hover:text-ut-green transition">Procurement News</a></li>
-                    <li><a href="#" class="hover:text-ut-green transition">Executive Team</a></li>
-                    <li><a href="#" class="hover:text-ut-green transition">Organization Chart</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Annual Budget Report
+                            (รายงานงบประมาณรายปี)</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Procurement News (ประกาศจัดซื้อจัดจ้าง)</a>
+                    </li>
+                    <li><a href="#" class="hover:text-ut-green transition">Executive Team (คณะผู้บริหาร)</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Organization Chart (โครงสร้างองค์กร)</a></li>
                 </ul>
             </div>
 
             <div class="space-y-6">
-                <h4 class="font-bold text-xs uppercase tracking-widest text-stone-400">Tourism</h4>
+                <h4 class="font-bold text-xs uppercase tracking-widest text-stone-400">Tourism | <span
+                        class="font-ci text-sm">การท่องเที่ยว</span></h4>
                 <ul class="space-y-3 text-sm text-stone-600">
-                    <li><a href="#" class="hover:text-ut-green transition">Tourist Map Download</a></li>
-                    <li><a href="#" class="hover:text-ut-green transition">Accommodations</a></li>
-                    <li><a href="#" class="hover:text-ut-green transition">Local Products (OTOP)</a></li>
-                    <li><a href="#" class="hover:text-ut-green transition">Events Calendar</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Tourist Map Download
+                            (ดาวน์โหลดแผนที่ท่องเที่ยว)</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Accommodations (ที่พักมรดกทางวัฒนธรรม)</a>
+                    </li>
+                    <li><a href="#" class="hover:text-ut-green transition">Local Products (OTOP)
+                            (สินค้าพื้นเมืองและโอทอป)</a></li>
+                    <li><a href="#" class="hover:text-ut-green transition">Events Calendar (ปฏิทินกิจกรรม)</a></li>
                 </ul>
             </div>
         </div>
@@ -1311,13 +1335,12 @@
 
             <!-- Contact / Address -->
             <div class="mt-12 text-center space-y-4">
-                <h4 class="text-ut-gold font-serif italic text-xl">Visit Us <span
+                <h4 class="text-ut-gold font-serif italic text-xl">Visit Us | <span
                         class="font-ci text-lg not-italic text-ut-gold/80 ml-2">เยี่ยมชมเรา</span></h4>
-                <p class="text-stone-400 font-light text-sm leading-relaxed">
-                    147 Sri Uthai Road,<br>
-                    Uthai Thani District,<br>
-                    Uthai Thani 61000
-                </p>
+                <div class="text-stone-400 font-light text-sm leading-relaxed space-y-1">
+                    <p>147 Sri Uthai Road, Uthai Thani District,</p>
+                    <p>Uthai Thani 61000</p>
+                </div>
             </div>
 
             <p class="text-stone-300 text-[9px] tracking-[0.4em] uppercase italic font-bold">Designed for International
@@ -1655,34 +1678,85 @@
             isCinemaMode = !isCinemaMode;
         }
 
-        // 12. Auto Carousel Logic (Fixed)
+        // 12. Auto Carousel Logic (Enhanced with Dots)
         function initCarousels() {
             const carousels = document.querySelectorAll('[data-carousel]');
             carousels.forEach(carousel => {
                 const slides = carousel.querySelectorAll('.slide-fade');
+                const carouselId = carousel.getAttribute('data-carousel');
+                const dotsContainer = document.querySelector(`[data-dots="${carouselId}"]`);
+
                 if (slides.length === 0) return;
 
                 let currentIndex = 0;
+                let autoPlayInterval;
+
+                // Create Dots
+                if (dotsContainer) {
+                    const isDarkSection = carousel.closest('section')?.classList.contains('bg-stone-900') ||
+                        carousel.closest('section')?.getAttribute('id') === 'sustainable';
+
+                    slides.forEach((_, index) => {
+                        const dot = document.createElement('div');
+                        const inactiveClass = isDarkSection ? 'bg-white/30' : 'bg-ut-green/20';
+                        dot.className = `w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${index === 0 ? 'bg-ut-gold w-8' : inactiveClass + ' hover:opacity-100'}`;
+                        dot.addEventListener('click', () => {
+                            goToSlide(index);
+                            resetInterval();
+                        });
+                        dotsContainer.appendChild(dot);
+                    });
+                }
+
+                const dots = dotsContainer ? dotsContainer.querySelectorAll('div') : [];
+
+                function updateDots() {
+                    const isDarkSection = carousel.closest('section')?.classList.contains('bg-stone-900') ||
+                        carousel.closest('section')?.getAttribute('id') === 'sustainable';
+                    const inactiveClass = isDarkSection ? 'bg-white/30' : 'bg-ut-green/20';
+
+                    dots.forEach((dot, index) => {
+                        if (index === currentIndex) {
+                            dot.className = 'w-8 h-3 rounded-full cursor-pointer transition-all duration-300 bg-ut-gold';
+                        } else {
+                            dot.className = `w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${inactiveClass} hover:opacity-100`;
+                        }
+                    });
+                }
+
+                function goToSlide(index) {
+                    // Hide current slide
+                    slides[currentIndex].style.display = 'none';
+                    slides[currentIndex].style.opacity = '0';
+
+                    currentIndex = index;
+
+                    // Show next slide
+                    slides[currentIndex].style.display = 'block';
+                    setTimeout(() => {
+                        slides[currentIndex].style.opacity = '1';
+                    }, 50);
+
+                    updateDots();
+                }
+
+                function resetInterval() {
+                    clearInterval(autoPlayInterval);
+                    startInterval();
+                }
+
+                function startInterval() {
+                    autoPlayInterval = setInterval(() => {
+                        let nextIndex = (currentIndex + 1) % slides.length;
+                        goToSlide(nextIndex);
+                    }, 5000);
+                }
 
                 // Show first slide immediately
                 slides[0].style.display = 'block';
                 slides[0].style.opacity = '1';
 
-                setInterval(() => {
-                    // Hide current slide
-                    slides[currentIndex].style.display = 'none';
-                    slides[currentIndex].style.opacity = '0';
-
-                    // Increment index
-                    currentIndex = (currentIndex + 1) % slides.length;
-
-                    // Show next slide
-                    slides[currentIndex].style.display = 'block';
-                    // Trigger reflow to restart animation if needed, or just let CSS handle it
-                    setTimeout(() => {
-                        slides[currentIndex].style.opacity = '1';
-                    }, 50);
-                }, 5000); // 5 seconds interval
+                startInterval();
             });
         }
 
