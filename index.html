@@ -451,7 +451,10 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 0;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            /* Above background, below content */
             /* mix-blend-mode: multiply; Removed to let the gold color show through naturally */
         }
 
@@ -1169,12 +1172,13 @@
 
     <!-- 9. VISION & MISSION (OFFICIAL) -->
     <section id="green-impact" class="py-24 relative overflow-hidden bg-slate-50">
-        <!-- Thai Pattern Watermark -->
-        <div class="thai-watermark"></div>
-        <!-- Subtle Cool Gradient Overlay -->
+        <!-- Subtle Cool Gradient Overlay (Background) -->
         <div
-            class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-sky-50 opacity-80 pointer-events-none">
+            class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-sky-50 opacity-80 pointer-events-none z-0">
         </div>
+
+        <!-- Thai Pattern Watermark (Foreground Overlay) -->
+        <div class="thai-watermark z-[1]"></div>
 
         <!-- Background Ambient Glow (Cool Blue & Stone) -->
         <div class="absolute top-1/4 -left-24 w-96 h-96 bg-sky-200/20 blur-[130px] rounded-full pointer-events-none">
