@@ -1,0 +1,28 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="uthaiFlower" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+             <!-- Background Grid (Fabric Weave Effect) -->
+            <path d="M80 0L0 0L0 80L80 80" fill="none" stroke="#b08968" stroke-width="0.5" stroke-opacity="0.2"/>
+            
+            <!-- Main Diamond Frame (Lai Thai) -->
+            <path d="M40 5L75 40L40 75L5 40z" fill="none" stroke="#b08968" stroke-width="1.5" stroke-opacity="0.4"/>
+            <path d="M40 10L70 40L40 70L10 40z" fill="none" stroke="#b08968" stroke-width="0.5" stroke-opacity="0.3"/>
+
+            <!-- Uthai Suphannikar Flower Motif ( Stylized) -->
+            <g transform="translate(40, 40)">
+                <!-- Petals -->
+                <path d="M0 -15 C5 -15 10 -10 0 0 C-10 -10 -5 -15 0 -15 Z" fill="#b08968" fill-opacity="0.2"/>
+                <path d="M14 -5 C17 0 12 10 0 0 C12 -10 12 -5 14 -5 Z" fill="#b08968" fill-opacity="0.2"/>
+                <path d="M10 12 C10 15 0 10 0 0 C5 15 10 12 10 12 Z" fill="#b08968" fill-opacity="0.2"/>
+                <path d="M-10 12 C-10 15 0 10 0 0 C-5 15 -10 12 -10 12 Z" fill="#b08968" fill-opacity="0.2"/>
+                <path d="M-14 -5 C-17 0 -12 10 0 0 C-12 -10 -12 -5 -14 -5 Z" fill="#b08968" fill-opacity="0.2"/>
+                <!-- Center Pollen -->
+                <circle cx="0" cy="0" r="3" fill="#b08968" fill-opacity="0.5"/>
+            </g>
+
+            <!-- Corner Accents (Kanok) -->
+            <path d="M0 0L10 10M80 0L70 10M0 80L10 70M80 80L70 70" stroke="#b08968" stroke-width="1" stroke-opacity="0.3"/>
+        </pattern>
+    </defs>
+    <rect width="80" height="80" fill="url(#uthaiFlower)" />
+</svg>
