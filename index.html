@@ -439,23 +439,22 @@
             box-shadow: 0 0 100px rgba(16, 185, 129, 0.1);
         }
 
-        /* Thai Pattern Watermark */
-        .thai-watermark {
-            width: 100%;
-            height: 100%;
-            background-image: url('Contents/uthai-pattern.svg');
+        /* Thai Pattern Watermark (Global) */
+        .thai-watermark-global {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* Data URI to guarantee loading */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='uthaiFlower' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M100 0L0 0L0 100L100 100' fill='none' stroke='%23b08968' stroke-width='0.5' stroke-opacity='0.2'/%3E%3Cpath d='M50 5L95 50L50 95L5 50z' fill='none' stroke='%23b08968' stroke-width='2' stroke-opacity='0.6'/%3E%3Cpath d='M50 12L88 50L50 88L12 50z' fill='none' stroke='%23b08968' stroke-width='1' stroke-opacity='0.5'/%3E%3Cg transform='translate(50, 50) scale(1.2)'%3E%3Cpath d='M0 -15 C5 -15 10 -10 0 0 C-10 -10 -5 -15 0 -15 Z' fill='%23b08968' fill-opacity='0.4'/%3E%3Cpath d='M14 -5 C17 0 12 10 0 0 C12 -10 12 -5 14 -5 Z' fill='%23b08968' fill-opacity='0.4'/%3E%3Cpath d='M10 12 C10 15 0 10 0 0 C5 15 10 12 10 12 Z' fill='%23b08968' fill-opacity='0.4'/%3E%3Cpath d='M-10 12 C-10 15 0 10 0 0 C-5 15 -10 12 -10 12 Z' fill='%23b08968' fill-opacity='0.4'/%3E%3Cpath d='M-14 -5 C-17 0 -12 10 0 0 C-12 -10 -12 -5 -14 -5 Z' fill='%23b08968' fill-opacity='0.4'/%3E%3Ccircle cx='0' cy='0' r='3' fill='%238d6e63' fill-opacity='0.8'/%3E%3C/g%3E%3Cpath d='M0 0L15 15M100 0L85 15M0 100L15 85M100 100L85 85' stroke='%23b08968' stroke-width='1.5' stroke-opacity='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23uthaiFlower)' /%3E%3C/svg%3E");
             background-repeat: repeat;
-            opacity: 1;
-            /* Fully visible (controlled by SVG opacity) */
+            opacity: 0.15;
+            /* Subtle global background */
             pointer-events: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            /* Above background, below content */
-            /* mix-blend-mode: multiply; Removed to let the gold color show through naturally */
+            z-index: 0;
+            /* Behind everything */
+            /* mix-blend-mode: multiply; */
         }
 
         /* Ensure content is above watermark */
@@ -508,6 +507,9 @@
 <body class="antialiased cursor-none transition-all duration-300" id="main-body"> <!-- Hide default cursor -->
     <!-- Custom Cursor Element -->
     <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- GLOBAL WATERMARK (FIXED BACKGROUND) -->
+    <div class="thai-watermark-global"></div>
 
     <!-- 0. ACCESSIBILITY BAR (WCAG) -->
     <div id="accessibility-bar"
@@ -1177,8 +1179,8 @@
             class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-sky-50 opacity-80 pointer-events-none z-0">
         </div>
 
-        <!-- Thai Pattern Watermark (Foreground Overlay) -->
-        <div class="thai-watermark z-[1]"></div>
+        <!-- Thai Pattern Watermark (Foreground Overlay) - REMOVED (Moved to Global) -->
+        <!-- <div class="thai-watermark z-[1]"></div> -->
 
         <!-- Background Ambient Glow (Cool Blue & Stone) -->
         <div class="absolute top-1/4 -left-24 w-96 h-96 bg-sky-200/20 blur-[130px] rounded-full pointer-events-none">
@@ -1391,8 +1393,10 @@
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                             alt="News 1">
                     </div>
-                    <span class="text-[9px] uppercase tracking-widest text-ut-gold font-bold">Press Release • Feb 10,
-                        2026</span>
+                    <span class="text-[9px] uppercase tracking-widest text-ut-gold font-bold">
+                        <span data-lang="en">Press Release • Feb 10, 2026</span>
+                        <span data-lang="th" style="display: none;">ข่าวประชาสัมพันธ์ • 10 ก.พ. 2569</span>
+                    </span>
                     <h4 class="font-serif text-xl text-stone-700 mt-2 group-hover:text-ut-green transition"
                         data-lang="en">Top 100
                         Green Destinations Award Ceremony</h4>
@@ -1412,8 +1416,10 @@
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                             alt="News 2">
                     </div>
-                    <span class="text-[9px] uppercase tracking-widest text-ut-green font-bold">Activity • Feb 14,
-                        2026</span>
+                    <span class="text-[9px] uppercase tracking-widest text-ut-green font-bold">
+                        <span data-lang="en">Activity • Feb 14, 2026</span>
+                        <span data-lang="th" style="display: none;">กิจกรรม • 14 ก.พ. 2569</span>
+                    </span>
                     <h4 class="font-serif text-xl text-stone-700 mt-2 group-hover:text-ut-green transition"
                         data-lang="en">Trok Rong Ya
                         Walking Street Valentine's Special</h4>
@@ -1433,8 +1439,10 @@
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                             alt="News 3">
                     </div>
-                    <span class="text-[9px] uppercase tracking-widest text-stone-400 font-bold">Announcement • Jan 20,
-                        2026</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-400 font-bold">
+                        <span data-lang="en">Announcement • Jan 20, 2026</span>
+                        <span data-lang="th" style="display: none;">ประกาศ • 20 ม.ค. 2569</span>
+                    </span>
                     <h4 class="font-serif text-xl text-stone-700 mt-2 group-hover:text-ut-green transition"
                         data-lang="en">Zero Waste
                         Community Workshop Registration</h4>
